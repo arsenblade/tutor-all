@@ -1,0 +1,35 @@
+@import "app/styles/variables";
+
+.login {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  row-gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 140px;
+}
+
+.title {
+  font-size: $secondHeader;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.containerButton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.linkRegister {
+  text-align: center;
+  text-decoration: underline;
+  transition: 0.2s;
+
+  &:hover {
+    color: $violet;
+  }
+}
