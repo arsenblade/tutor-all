@@ -1,0 +1,48 @@
+@import 'app/styles/variables';
+
+.header {
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.logo {
+  width: 140px;
+  height: 61px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.headerNavigation {
+  display: flex;
+  column-gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.linkAuth {
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:hover {
+    color: $violet;
+  }
+}
+
+.icon {
+  transition: 0.2s;
+  fill: #FFFFFF;
+  cursor: pointer;
+
+  &:hover {
+    fill: $violet;
+  }
+}
