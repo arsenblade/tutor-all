@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "roles": [
+        "teacher"
+      ],
+      "email": "test1234@mail.ru",
+      "password": "$2a$07$Hjxgf6MQIPUFVHeL8cDbwOcFGtsOhwKpobcE4/lUMcvCM62XIJ7py",
+      "name": "",
+      "regDate": "10-01-2024",
+      "isBanned": false,
+      "block-questions": [
+        "4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "1",
+      "text": "gegegerg",
+      "type": "test",
+      "answers": {
+        "id": "2",
+        "text": "tefg"
+      }
+    }
+  ],
+  "correct-answers": [
+    {
+      "id": "1",
+      "type": "test",
+      "correct-answer": "2"
+    }
+  ],
+  "block-questions": [
+    {
+      "id": "4",
+      "questions": [
+        "1"
+      ]
+    }
+  ]
+}
