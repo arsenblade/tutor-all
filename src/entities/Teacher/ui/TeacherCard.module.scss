@@ -1,0 +1,85 @@
+@import "app/styles/variables";
+
+.teacherCard {
+  display: grid;
+  grid-template-columns: 180px 3fr 1fr;
+  border-radius: 10px;
+  background: $black80;
+  column-gap: 30px;
+  padding: 10px;
+  height: 148px;
+
+  &:hover {
+    background: $black60;
+  }
+}
+
+.teacherImg {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  overflow: hidden;
+  height: 40px;
+}
+
+.linkDescription {
+  color: $violet;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.conditions {
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+}
+
+.conditionsItem {
+  color: $green;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  background: $black20;
+  padding: 8px;
+}
+
+.priceValue {
+  color: $violet;
+  font-weight: 600;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.statusOGE {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.statusEGE {
+  position: absolute;
+  top: 4px;
+  right: 38px;
+}
