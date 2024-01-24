@@ -1,0 +1,27 @@
+@import "app/styles/variables";
+
+.customInput {
+  padding: 12px;
+  width: 100%;
+  outline: none;
+  outline-offset: 0;
+  background-color: $black100;
+  border: 0;
+  font-size: 16px;
+  cursor: text;
+  color: white;
+  border-radius: 4px;
+}
+
+.customInput:focus {
+  background: $black80;
+}
+
+.customInput:hover {
+  background: $black80;
+}
+
+.customInput::placeholder {
+  color: $gray;
+}
+
