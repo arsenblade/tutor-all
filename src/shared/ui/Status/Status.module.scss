@@ -1,0 +1,18 @@
+@import 'app/styles/variables';
+
+.status {
+  padding: 2px 4px;
+  font-size: 11px;
+  line-height: 14px;
+  width: max-content;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.green {
+  background: $green;
+}
+
+.violet {
+  background: $violet;
+}
