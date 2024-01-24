@@ -1,0 +1,15 @@
+@import 'app/styles/variables';
+
+.logoutButton {
+  transition: 0.2s;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:hover {
+    color: $violet;
+  }
+}
