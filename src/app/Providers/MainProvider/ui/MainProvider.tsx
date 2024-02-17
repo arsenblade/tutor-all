@@ -7,6 +7,7 @@ import {useActionCreatorsTyped} from 'shared/hooks/useActionsCreators';
 import {authActions} from 'entities/User';
 import styles from './MainProvider.module.scss';
 import {Navigation} from 'widgets/Navigation';
+import Footer from '../../../../widgets/Footer/ui/Footer';
 
 interface MainProviderProps {
     children?: React.ReactNode
@@ -28,6 +29,7 @@ const MainProvider:FC<MainProviderProps> = ({ children }) => {
           <main className={styles.main}>
             <AppRouter />
           </main>
+          <Footer />
         </ErrorBoundary>
       </BrowserRouter>
     );

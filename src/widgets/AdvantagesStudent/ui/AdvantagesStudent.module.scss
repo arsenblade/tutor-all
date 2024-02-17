@@ -1,0 +1,185 @@
+@import "app/styles/variables";
+
+.advantagesTeachers {
+  display: flex;
+  flex-direction: column;
+}
+
+.advantageCards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.info {
+  margin-top: 160px;
+}
+
+.infoCards {
+  display: flex;
+  column-gap: 32px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  row-gap: 16px;
+  flex: 1;
+  border-radius: 32px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    padding: 16px 16px 0 16px;
+    border-radius: 20px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.infoCardStandart {
+  background: $purple;
+}
+
+.infoCardPrimary {
+  background: $blue;
+}
+
+.advantageCard {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  column-gap: 84px;
+  padding: 32px 32px 0 32px;
+  background: $purple;
+  border-radius: 30px;
+  row-gap: 16px;
+
+  @media (max-width: $tabletWidth) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    padding: 16px 16px 0 16px;
+    border-radius: 20px;
+  }
+}
+
+.advantageCardSecondary {
+  background: $black100;
+}
+
+.advantageCardPrimary {
+  background: $blue;
+}
+
+.title {
+  width: 790px;
+  text-align: center;
+  font-size: 48px;
+  line-height: 114%;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  @media (max-width: 800px) {
+    width: auto;
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 32px;
+  }
+}
+
+.titleInfo {
+  width: 790px;
+  text-align: center;
+  font-size: 44px;
+  line-height: 114%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+
+  @media (max-width: 800px) {
+    width: auto;
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 36px;
+  }
+}
+
+.subTitle {
+  font-size: 48px;
+  line-height: 114%;
+  margin: 0;
+  color: $purple;
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 32px;
+  }
+}
+
+.titleCard {
+  font-size: 32px;
+  line-height: 124%;
+  margin: 0;
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 22px;
+  }
+}
+
+.description {
+  font-size: 18px;
+  line-height: 140%;
+  opacity: .6;
+  margin: 0;
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 15px;
+  }
+}
+
+.advantagesItem {
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.image {
+  width: 400px;
+  height: 300px;
+  justify-self: center;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  @media (max-width: $tabletWidth) {
+    width: 100%;
+  }
+}
+
+.imageInfo {
+  width: 100%;
+  justify-self: center;
+  object-fit: cover;
+  margin-top: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.advantagesList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding: 0 0 0 16px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}

@@ -7,11 +7,12 @@ interface ButtonPropsInterface {
     color: 'Violet' | 'Green'
     disabled?: boolean,
     onClick?: () => void
+    className?: string
 }
 
-export default function Button({children, onClick, color, disabled}: ButtonPropsInterface) {
+export default function Button({children, onClick, color, disabled, className}: ButtonPropsInterface) {
   return (
-    <button className={cn(styles.button, styles[`button${color}`])} onClick={onClick} disabled={disabled}>
+    <button className={cn(styles.button, styles[`button${color}`], className)} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

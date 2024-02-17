@@ -3,11 +3,17 @@
 .login {
   display: flex;
   flex-direction: column;
-  max-width: 440px;
+  max-width: 480px;
   row-gap: 16px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 140px;
+  padding: 0 20px;
+  padding-bottom: 80px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    margin-top: 80px;
+  }
 }
 
 .title {
@@ -15,6 +21,10 @@
   text-align: center;
   margin-top: 0;
   margin-bottom: 20px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 30px;
+  }
 }
 
 .containerButton {
@@ -22,6 +32,11 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 16px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
 }
 
 .linkRegister {

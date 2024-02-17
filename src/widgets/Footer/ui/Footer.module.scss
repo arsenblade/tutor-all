@@ -1,0 +1,43 @@
+@import "app/styles/variables";
+
+.footer {
+  border-top: 1px solid #FFFFFF;
+}
+
+.footerWrapper {
+  display: flex;
+  column-gap: 16px;
+  padding: 20px 20px 100px 20px;
+  max-width: 1128px;
+  margin: 0 auto;
+  align-items: center;
+
+  @media (max-width: $mobileOnlyWidth) {
+    justify-content: space-between;
+  }
+}
+
+.logo {
+
+}
+
+.vk {
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $purple;
+
+    .vkIcon {
+      fill: $purple;
+    }
+  }
+}
+
+.vkIcon {
+  fill: #FFFFFF;
+}

@@ -30,25 +30,35 @@ export default function TeacherCard({}: TeacherCardPropsInterface) {
             />
           </div>
         </div>
-        <div className={styles.info}>
-          <h3 className={styles.title}>Тимофеева Анастасия</h3>
+        <div className={styles.content}>
+          <div className={styles.info}>
+            <h3 className={styles.title}>Тимофеева Анастасия</h3>
 
-          <p className={styles.description}>
-            Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете красоту языка. Также я углубляюсь в исследования лингвистики, чтобы делиться с вами самым интересным и актуальным. Давайте вместе погрузимся в мир слов!
-          </p>
+            <p className={styles.description}>
+              Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете красоту языка. Также я углубляюсь в исследования лингвистики, чтобы делиться с вами самым интересным и актуальным. Давайте вместе погрузимся в мир слов!
+            </p>
 
-          <div className={styles.conditions}>
-            Предметы: <span className={styles.conditionsItem}>русский язык, литература</span>
+            <div className={styles.conditions}>
+              Предметы: <span className={styles.conditionsItem}>русский язык, литература</span>
+            </div>
           </div>
-        </div>
-        <div className={styles.details}>
-          <div className={styles.priceContainer}>
-            <span>за 1 час</span>
-            <span className={styles.priceValue}>
-              1600 ₽
-            </span>
+          <div className={styles.details}>
+            <div className={styles.priceContainer}>
+              <span>за 1 час</span>
+              <span className={styles.priceValue}>
+                1600 ₽
+              </span>
+            </div>
+            <div
+              className={styles.button}
+            >
+              <Button
+                color="Violet"
+              >
+                Выбрать
+              </Button>
+            </div>
           </div>
-          <Button color="Violet">Выбрать</Button>
         </div>
       </div>
     );

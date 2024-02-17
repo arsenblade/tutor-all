@@ -1,0 +1,57 @@
+@import "app/styles/variables";
+
+.mainContent {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding-bottom: 160px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.secondaryContent {
+  background: $beige;
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.popularTeacherList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 32px;
+  margin-top: 80px;
+
+  @media (max-width: $tabletWidth) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+
+.secondaryContentWrapper {
+  max-width: 1128px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.secondaryContentTitle {
+  width: 790px;
+  text-align: center;
+  font-size: 44px;
+  line-height: 114%;
+  margin: 0 auto;
+  color: #000000;
+
+  @media (max-width: 800px) {
+    width: auto;
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 36px;
+  }
+}

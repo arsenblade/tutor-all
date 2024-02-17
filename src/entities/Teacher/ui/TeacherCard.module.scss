@@ -1,8 +1,9 @@
 @import "app/styles/variables";
 
 .teacherCard {
+  position: relative;
   display: grid;
-  grid-template-columns: 180px 3fr 1fr;
+  grid-template-columns: 180px 1fr;
   border-radius: 10px;
   background: $black80;
   column-gap: 30px;
@@ -12,11 +13,37 @@
   &:hover {
     background: $black60;
   }
+
+  @media (max-width: $tabletWidth) {
+    grid-template-columns: 250px 1fr;
+    height: auto;
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 20px;
+
+  @media (max-width: $tabletWidth) {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
 }
 
 .teacherImg {
-  width: 180px;
+  width: 100%;
   border-radius: 10px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    object-fit: cover;
+    max-height: 260px;
+  }
 }
 
 .title {
@@ -53,6 +80,11 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
+  @media (max-width: $tabletWidth) {
+    margin-top: 8px;
+    row-gap: 0;
+  }
 }
 
 .priceContainer {
@@ -70,6 +102,11 @@
 
 .imgContainer {
   position: relative;
+  font-size: 11px;
+
+  @media (max-width: $tabletWidth) {
+    font-size: 14px;
+  }
 }
 
 .statusOGE {
@@ -82,4 +119,22 @@
   position: absolute;
   top: 4px;
   right: 38px;
+
+  @media (max-width: $tabletWidth) {
+    right: 44px;
+  }
+}
+
+.button {
+  @media (max-width: $tabletWidth) {
+    & > button {
+      background: transparent;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
