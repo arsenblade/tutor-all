@@ -1,0 +1,27 @@
+@import "app/styles/variables";
+
+.textArea {
+  padding: 12px;
+  width: 100%;
+  outline: none;
+  outline-offset: 0;
+  background-color: $black100;
+  border: 0;
+  font-size: 16px;
+  cursor: text;
+  color: white;
+  border-radius: 4px;
+  resize: none;
+}
+
+.textArea:focus {
+  background: $black80;
+}
+
+.textArea:hover {
+  background: $black80;
+}
+
+.textArea::placeholder {
+  color: $gray;
+}

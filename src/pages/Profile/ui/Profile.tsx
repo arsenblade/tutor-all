@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import LinkPanel from 'shared/ui/LinkPanel/LinkPanel';
 import styles from './Profile.module.scss';
 import {useAuth} from 'shared/hooks/useAuth';
@@ -18,7 +17,7 @@ export default function Profile({}: ProfilePropsInterface) {
           <div className={styles.profileMyPage}>
             <LinkPanel
               imgPath="/images/teacher@2x.jpg"
-              link="#"
+              link="/profile/create-teacher"
               title="Тимофеева Анастасия"
               description="Моя страница"
               isBorderImg

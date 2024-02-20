@@ -4,6 +4,8 @@ import {ErrorPage} from 'pages/Error';
 import {LoginPage, RegistrationPage} from 'pages/Auth';
 import {TeachersPage} from 'pages/Teachers';
 import {ProfilePage} from '../../pages/Profile';
+import {CreateTeacher} from '../../pages/CreateTeacher';
+import {TeacherPage} from '../../pages/Teacher';
 
 interface IRoute {
     path: string,
@@ -15,7 +17,9 @@ export enum Routes {
     REGISTER_ROUTE = '/register',
     LOGIN_ROUTE = '/login',
     TEACHERS_ROUTE = '/teachers',
+    TEACHER_ROUTE = '/teachers/:id',
     PROFILE_ROUTE = '/profile',
+    CREATE_TEACHER_ROUTE = '/profile/create-teacher',
     PAGE_404 = '*',
 }
 
@@ -31,6 +35,10 @@ export const publicRoutes: IRoute[] = [
     {
         path: Routes.TEACHERS_ROUTE,
         Component: TeachersPage,
+    },
+    {
+        path: Routes.TEACHER_ROUTE,
+        Component: TeacherPage,
     },
 ];
 
@@ -56,6 +64,10 @@ export const teacherRoutes: IRoute[] = [
     {
         path: Routes.PROFILE_ROUTE,
         Component: ProfilePage,
+    },
+    {
+        path: Routes.CREATE_TEACHER_ROUTE,
+        Component: CreateTeacher,
     },
 ];
 

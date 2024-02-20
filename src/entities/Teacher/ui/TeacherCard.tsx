@@ -54,6 +54,7 @@ export default function TeacherCard({}: TeacherCardPropsInterface) {
             >
               <Button
                 color="Violet"
+                to="/teachers/1"
               >
                 Выбрать
               </Button>
