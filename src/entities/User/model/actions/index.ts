@@ -21,6 +21,8 @@ export const registration = createAsyncThunk<IUserState, IUserRegistrationParams
         localStorage.setItem('token', response.data.token);
 
         return {
+            id: registrationUser.id,
+            email: registrationUser.email,
             roles: registrationUser.roles,
             name: registrationUser.name,
             avatar: registrationUser.avatar,
@@ -44,6 +46,8 @@ export const login = createAsyncThunk<IUserState, IUserLogin>(
             localStorage.setItem('token', response.data.token);
 
             return {
+                id: loginUser.id,
+                email: loginUser.email,
                 roles: loginUser.roles,
                 name: loginUser.name,
                 avatar: loginUser.avatar,
@@ -78,6 +82,8 @@ export const checkAuth = createAsyncThunk<IUserState, void>(
             const loginUser = response.data.user;
 
             return {
+                id: loginUser.id,
+                email: loginUser.email,
                 roles: loginUser.roles,
                 name: loginUser.name,
                 avatar: loginUser.avatar,

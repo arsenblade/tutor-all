@@ -1,0 +1,52 @@
+@import "app/styles/variables";
+
+.homeworkTeacher {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  column-gap: 16px;
+}
+
+.createHomework {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid $purple;
+  padding: 48px;
+  border-radius: 32px;
+  height: 240px;
+  font-size: 26px;
+  line-height: 130%;
+  font-weight: 700;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba($purple, 0.2);
+  }
+}
+
+.setHomework {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid $green;
+  padding: 48px;
+  border-radius: 32px;
+  height: 240px;
+  font-size: 26px;
+  line-height: 130%;
+  font-weight: 700;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba($green, 0.2);
+  }
+}

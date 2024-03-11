@@ -22,6 +22,8 @@ export const authSlice = createSlice({
                 state.isLoading = false;
 
                 state.user = {
+                    id: payload.id,
+                    email: payload.email,
                     roles: payload.roles,
                     name: payload.name,
                     avatar: payload.avatar,
@@ -40,6 +42,8 @@ export const authSlice = createSlice({
                 state.isLoading = false;
 
                 state.user = {
+                    id: payload.id,
+                    email: payload.email,
                     roles: payload.roles,
                     name: payload.name,
                     avatar: payload.avatar,
@@ -58,6 +62,8 @@ export const authSlice = createSlice({
                 state.isLoading = false;
 
                 state.user = {
+                    id: payload.id,
+                    email: payload.email,
                     roles: payload.roles,
                     name: payload.name,
                     avatar: payload.avatar,

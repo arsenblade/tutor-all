@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, {InputHTMLAttributes, memo} from 'react';
 import cn from 'classnames';
 import styles from './CustomInput.module.scss';
 
@@ -12,4 +12,4 @@ const CustomInput = React.forwardRef<HTMLInputElement, CustomInputPropsInterface
   />
 ));
 
-export default CustomInput;
+export default memo(CustomInput);

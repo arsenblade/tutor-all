@@ -23,7 +23,7 @@ export interface IUserLoginResponse {
     user: IUser;
 }
 
-export interface IUserState extends Omit<IUser, 'id' | 'email' | 'password'> {}
+export interface IUserState extends Omit<IUser, 'password'> {}
 
 export interface IInitialStateAuth {
     isLoading: boolean;

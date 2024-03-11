@@ -6,6 +6,8 @@ import {TeachersPage} from 'pages/Teachers';
 import {ProfilePage} from '../../pages/Profile';
 import {CreateTeacher} from '../../pages/CreateTeacher';
 import {TeacherPage} from '../../pages/Teacher';
+import {HomeworkPage} from '../../pages/Homework';
+import {CreateHomeworkPage} from '../../pages/CreateHomework';
 
 interface IRoute {
     path: string,
@@ -20,6 +22,8 @@ export enum Routes {
     TEACHER_ROUTE = '/teachers/:id',
     PROFILE_ROUTE = '/profile',
     CREATE_TEACHER_ROUTE = '/profile/create-teacher',
+    HOMEWORK_ROUTE = '/homework',
+    HOMEWORK_CREATE_ROUTE = '/homework/create',
     PAGE_404 = '*',
 }
 
@@ -58,6 +62,10 @@ export const studentRoutes: IRoute[] = [
         path: Routes.PROFILE_ROUTE,
         Component: ProfilePage,
     },
+    {
+        path: Routes.HOMEWORK_ROUTE,
+        Component: HomeworkPage,
+    },
 ];
 
 export const teacherRoutes: IRoute[] = [
@@ -68,6 +76,14 @@ export const teacherRoutes: IRoute[] = [
     {
         path: Routes.CREATE_TEACHER_ROUTE,
         Component: CreateTeacher,
+    },
+    {
+        path: Routes.HOMEWORK_ROUTE,
+        Component: HomeworkPage,
+    },
+    {
+        path: Routes.HOMEWORK_CREATE_ROUTE,
+        Component: CreateHomeworkPage,
     },
 ];
 
