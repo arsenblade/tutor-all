@@ -1,0 +1,23 @@
+@import "app/styles/variables";
+
+.createHomework {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fieldHomeworkName {
+  max-width: 600px;
+}
+
+.actions {
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  column-gap: 16px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    flex-direction: column;
+    row-gap: 16px;
+  }
+}

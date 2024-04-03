@@ -1,24 +1,63 @@
 import CustomInput from 'shared/ui/CustomInput/CustomInput';
 import {ChangeEvent, memo} from 'react';
 import {IAnswer} from '../../types/Answer.types';
+import Checkbox from 'shared/ui/Checkbox/Checkbox';
+import styles from '../Question.module.scss';
 
 interface AnswerItemPropsInterface {
     answer: IAnswer,
+    indexAnswer: number
     onChange: (textAnswer: string, idAnswer: string) => void
+    onChangeCorrectAnswer: (isCorrect: boolean, idAnswer: string) => void
+    onClickRemoveAnswer: (indexAnswer: number) => void
 }
 
-function AnswerItem({answer, onChange}: AnswerItemPropsInterface) {
-    const handleChangeAnswer = (event: ChangeEvent<HTMLInputElement>, idAnswer: string) => {
-        onChange(event.target.value, idAnswer);
+function AnswerItem({answer, indexAnswer, onChange, onChangeCorrectAnswer, onClickRemoveAnswer}: AnswerItemPropsInterface) {
+    const handleChangeAnswer = (event: ChangeEvent<HTMLInputElement>) => {
+        onChange(event.target.value, answer.id);
+    };
+
+    const handleChangeCorrectAnswer = (isCorrect: boolean) => {
+        onChangeCorrectAnswer(isCorrect, answer.id);
+    };
+
+    const handleClickRemoveAnswer = () => {
+        onClickRemoveAnswer(indexAnswer);
     };
 
     return (
-      <CustomInput
-        key={answer.id}
-        type="text"
-        placeholder="Введите текст ответа"
-        onChange={(event) => handleChangeAnswer(event, answer.id)}
-      />
+      <div className={styles.answerItem}>
+        <CustomInput
+          className={styles.answerField}
+          key={answer.id}
+          type="text"
+          placeholder="Введите текст ответа"
+          onChange={handleChangeAnswer}
+        />
+        <Checkbox
+          className={styles.answerCheckbox}
+          onChange={handleChangeCorrectAnswer}
+          checked={answer.isCorrect}
+        />
+        {indexAnswer > 1 ? (
+          <button className={styles.answerRemove} onClick={handleClickRemoveAnswer}>
+            <svg
+              className={styles.answerIconRemove}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </button>
+          ) : null}
+      </div>
     );
 }
 

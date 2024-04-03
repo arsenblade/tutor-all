@@ -1,4 +1,4 @@
-import {IQuestion} from '../../../entities/Question/types/Question.types';
+import {IQuestion} from 'entities/Question/types/Question.types';
 
 export interface ICreateHomework {
     homework: IHomework,
@@ -8,5 +8,13 @@ export interface ICreateHomework {
 export interface IHomework {
     id: string,
     name: string,
+    idTeacher: string,
     questions: IQuestion[],
+}
+
+export interface ICorrectAnswer {
+    id: string,
+    correctAnswerIds: string[],
+    idHomework: string,
+    idQuestion: string,
 }

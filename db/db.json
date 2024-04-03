@@ -22,49 +22,100 @@
       ]
     }
   ],
-  "homeworks-teachers": {
-    "5bf64340-2e85-4cfd-93e7-8787a46dbe8c": [
-      {
-        "id": "333",
-        "name": "5 задание ЕГЭ",
-        "questions": [
-          {
-            "id": "1",
-            "text": "gegegerg",
-            "type": "test",
-            "answers": [
-              {
-                "id": "2",
-                "text": "tefg"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "433",
-        "name": "4 задание ЕГЭ",
-        "questions": [
-          {
-            "id": "6",
-            "text": "jhjkhhhhh",
-            "type": "test",
-            "answers": [
-              {
-                "id": "2",
-                "text": "asaasasasa"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
+  "homeworks": [
+    {
+      "id": "1111",
+      "idTeachers": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "name": "4 задание ЕГЭ",
+      "questions": [
+        {
+          "id": "1",
+          "text": "gegegerg",
+          "type": "test",
+          "answers": [
+            {
+              "id": "2",
+              "text": "tefg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2222",
+      "idTeachers": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "name": "5 задание ЕГЭ",
+      "questions": [
+        {
+          "id": "1",
+          "text": "gegegerg",
+          "type": "test",
+          "answers": [
+            {
+              "id": "2",
+              "text": "tefg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3333",
+      "idTeachers": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "name": "6 задание ЕГЭ",
+      "questions": [
+        {
+          "id": "1",
+          "text": "gegegerg",
+          "type": "test",
+          "answers": [
+            {
+              "id": "2",
+              "text": "tefg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cb53d6d8-079e-4140-bad0-50aae836bc5a",
+      "name": "Тест домашка",
+      "idTeacher": "",
+      "questions": [
+        {
+          "id": "7066ec7a-de7c-4bd2-88a7-cb6e97db8954",
+          "text": "f",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "0809c214-a7e3-48a4-a366-0736bedd174b",
+              "text": ""
+            },
+            {
+              "id": "76c0f0b0-8447-4f37-ab84-33c76af11402",
+              "text": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "correct-answers": [
     {
       "id": "1",
-      "type": "test",
-      "correct-answer": "2"
-    }
+      "correctAnswerId": "2",
+      "idHomework": "1111",
+      "idQuestion": "1"
+    },
+    [
+      {
+        "id": "d5d0fec8-0f5a-4de9-aa0e-7b7c6efc71e6",
+        "correctAnswerIds": [
+          "0809c214-a7e3-48a4-a366-0736bedd174b"
+        ],
+        "idHomework": "cb53d6d8-079e-4140-bad0-50aae836bc5a",
+        "idQuestion": "7066ec7a-de7c-4bd2-88a7-cb6e97db8954"
+      }
+    ]
   ]
 }

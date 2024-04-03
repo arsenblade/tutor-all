@@ -1,0 +1,120 @@
+@import "app/styles/variables";
+
+.question {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 0;
+
+  @media (max-width: $mobileOnlyWidth) {
+    border-radius: 22px;
+    font-size: 18px;
+  }
+}
+
+.fieldQuestionContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 16px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.numberQuestion {
+  font-size: 18px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.answersList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.answerItem {
+  position: relative;
+}
+
+.answerCheckbox {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.answerField {
+  padding-right: 60px;
+}
+
+.answerRemove {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    & > svg {
+      stroke: $red;
+    }
+  }
+}
+
+.answerIconRemove {
+  stroke: #FFFFFF;
+}
+
+.questionContainer {
+  display: flex;
+}
+
+.questionRemove {
+  position: absolute;
+  right: 8px;
+  top: 11px;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    & > svg {
+      stroke: $red;
+    }
+  }
+}
+
+.fieldTitleContainer {
+  display: flex;
+}

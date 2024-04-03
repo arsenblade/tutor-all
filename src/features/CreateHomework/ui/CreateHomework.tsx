@@ -5,47 +5,74 @@ import {actionsCreateHomework} from '../model/slices';
 import {ChangeEvent, useCallback, useRef} from 'react';
 import {useAppSelector} from 'shared/hooks/useAppSelector';
 import {Question} from 'entities/Question';
+import {asyncActionCreateHomework} from '../model/actions';
+import {useAuth} from '../../../shared/hooks/useAuth';
+import styles from './CreateHomework.module.scss';
 
 interface CreateHomeworkPropsInterface {
 
 }
 
 export default function CreateHomework({}: CreateHomeworkPropsInterface) {
-    const {name, questions} = useAppSelector((state) => state.createHomeworkReducer.homework);
-    const actions = useActionCreatorsTyped(actionsCreateHomework);
+    const homework = useAppSelector((state) => state.createHomeworkReducer.homework);
+    const actionsHomework = useActionCreatorsTyped(actionsCreateHomework);
+    const actionsAsyncHomework = useActionCreatorsTyped(asyncActionCreateHomework);
     const refTest = useRef<HTMLDivElement | null>(null);
+    const auth = useAuth();
 
     const addCreateHomework = useCallback(() => {
-        actions.addQuestion();
+        actionsHomework.addQuestion();
     }, []);
 
     const handleChangeNameHomework = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-        actions.changeNameHomework(event.target.value);
-    }, [name]);
+        actionsHomework.changeNameHomework(event.target.value);
+    }, [homework.name]);
 
     const handleClickAddAnswer = useCallback((idQuestion: string) => {
-        actions.addAnswer({idQuestion});
-    }, [name]);
+        actionsHomework.addAnswer({idQuestion});
+    }, [homework.name]);
+
+    const handleSubmitCreateHomework = () => {
+        actionsAsyncHomework.createHomework({homework, idUser: auth.user?.id || ''});
+    };
+
+    const handleClickRemoveAnswer = (indexQuestion: number, indexAnswer: number) => {
+        actionsHomework.removeAnswer({indexQuestion, indexAnswer});
+    };
+
+    const handleClickRemoveQuestion = (questionId: string) => {
+        actionsHomework.removeQuestion({questionId});
+    };
 
     return (
-      <div>
+      <div className={styles.createHomework}>
         <CustomInput
-          value={name}
+          className={styles.fieldHomeworkName}
+          value={homework.name}
           onChange={handleChangeNameHomework}
           type="text"
           placeholder="Введите название домашнего задания"
         />
-        {questions.map((question, index) => (
+        {homework.questions.map((question, index) => (
           <Question
             key={question.id}
             question={question}
-            onChange={actions.changeQuestion}
-            index={index + 1}
+            onChange={actionsHomework.changeQuestion}
+            index={index}
             onClickAddAnswer={handleClickAddAnswer}
+            onClickRemoveAnswer={handleClickRemoveAnswer}
+            onClickRemoveQuestion={handleClickRemoveQuestion}
           />
         ))}
-        <Button color="Violet" onClick={addCreateHomework}>Добавать вопрос</Button>
-        <Button color="Green">Создать Д/З</Button>
+        <div className={styles.actions}>
+          <Button color="Green" onClick={addCreateHomework}>Добавать вопрос</Button>
+          <Button
+            color="Violet"
+            onClick={handleSubmitCreateHomework}
+          >
+            Создать Д/З
+          </Button>
+        </div>
       </div>
     );
 }

@@ -15,6 +15,7 @@ const initialState: IInitialStateAuth = {
     homework: {
         id: uuid.v4(),
         name: '',
+        idTeacher: '',
         questions: [
             {
                 id: uuid.v4(),
@@ -24,10 +25,12 @@ const initialState: IInitialStateAuth = {
                     {
                         id: uuid.v4(),
                         text: '',
+                        isCorrect: false,
                     },
                     {
                         id: uuid.v4(),
                         text: '',
+                        isCorrect: false,
                     },
                 ],
             },
@@ -50,6 +53,12 @@ export const authSlice = createSlice({
                     {
                         id: uuid.v4(),
                         text: '',
+                        isCorrect: false,
+                    },
+                    {
+                        id: uuid.v4(),
+                        text: '',
+                        isCorrect: false,
                     },
                 ],
             });
@@ -72,8 +81,8 @@ export const authSlice = createSlice({
                     const answers = [...question.answers, {
                         id: uuid.v4(),
                         text: '',
+                        isCorrect: false,
                     }];
-                    console.log(answers);
 
                     return {
                         ...question,
@@ -83,6 +92,14 @@ export const authSlice = createSlice({
 
                 return question;
             });
+        },
+        removeAnswer(state, action: PayloadAction<{indexQuestion: number, indexAnswer: number}>) {
+            const answer = state.homework.questions[action.payload.indexQuestion].answers;
+            answer.splice(action.payload.indexAnswer, 1);
+            state.homework.questions[action.payload.indexQuestion].answers = answer;
+        },
+        removeQuestion(state, action: PayloadAction<{questionId: string}>) {
+            state.homework.questions = state.homework.questions.filter((question) => question.id !== action.payload.questionId);
         },
     },
     extraReducers: (builder) => {

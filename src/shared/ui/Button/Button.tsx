@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 interface ButtonPropsInterface {
     children: ReactNode
-    color: 'Violet' | 'Green'
+    color: 'Violet' | 'Green' | 'Blue'
     disabled?: boolean,
     onClick?: () => void
     className?: string
