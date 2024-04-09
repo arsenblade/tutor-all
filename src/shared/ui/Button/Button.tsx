@@ -9,10 +9,11 @@ interface ButtonPropsInterface {
     disabled?: boolean,
     onClick?: () => void
     className?: string
+    isLoading?: boolean,
     to?: string
 }
 
-export default function Button({children, onClick, color, disabled, className, to}: ButtonPropsInterface) {
+export default function Button({children, onClick, color, disabled, className, to, isLoading}: ButtonPropsInterface) {
   return (
     to ? (
       <Link
@@ -28,8 +29,13 @@ export default function Button({children, onClick, color, disabled, className, t
         onClick={onClick}
         disabled={disabled}
       >
-        {children}
+        {isLoading ? (
+          <span className={styles.buttonLoading} />
+            ) : null}
+        {!isLoading ? (
+                children
+            ) : null}
       </button>
-)
+    )
   );
 }

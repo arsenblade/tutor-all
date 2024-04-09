@@ -153,6 +153,7 @@ server.get('/check-auth', (req, res) => {
     return res.status(200).json({
       token,
       user: {
+        id: userFromBd.id,
         roles: userFromBd.roles,
         name: userFromBd.name,
         avatar: userFromBd.avatar,

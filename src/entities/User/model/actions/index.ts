@@ -7,8 +7,11 @@ import {
     IUserRegistrationResponse,
     IUserState,
 } from '../../types/User';
+import {AxiosError} from 'axios';
 
-export const registration = createAsyncThunk<IUserState, IUserRegistrationParams>(
+export const registration = createAsyncThunk<IUserState, IUserRegistrationParams, {
+    rejectValue: AxiosError,
+}>(
     'registration',
     async (user, thunkApi) => {
     try {
@@ -29,13 +32,16 @@ export const registration = createAsyncThunk<IUserState, IUserRegistrationParams
             isBanned: registrationUser.isBanned,
             regDate: registrationUser.regDate,
         };
-    } catch (e) {
-        return thunkApi.rejectWithValue(e);
+    } catch (error) {
+        const errorTyped = error as AxiosError;
+        return thunkApi.rejectWithValue(errorTyped);
     }
 },
 );
 
-export const login = createAsyncThunk<IUserState, IUserLogin>(
+export const login = createAsyncThunk<IUserState, IUserLogin, {
+    rejectValue: AxiosError,
+}>(
     'login',
     async (user, thunkApi) => {
         try {
@@ -54,26 +60,32 @@ export const login = createAsyncThunk<IUserState, IUserLogin>(
                 isBanned: loginUser.isBanned,
                 regDate: loginUser.regDate,
             };
-        } catch (e) {
-            return thunkApi.rejectWithValue(e);
+        } catch (error) {
+            const errorTyped = error as AxiosError;
+            return thunkApi.rejectWithValue(errorTyped);
         }
     },
 );
 
-export const logout = createAsyncThunk<null, void>(
+export const logout = createAsyncThunk<null, void, {
+    rejectValue: AxiosError,
+}>(
     'logout',
     async (_, thunkApi) => {
         try {
             localStorage.removeItem('token');
 
             return null;
-        } catch (e) {
-            return thunkApi.rejectWithValue(e);
+        } catch (error) {
+            const errorTyped = error as AxiosError;
+            return thunkApi.rejectWithValue(errorTyped);
         }
     },
 );
 
-export const checkAuth = createAsyncThunk<IUserState, void>(
+export const checkAuth = createAsyncThunk<IUserState, void, {
+    rejectValue: AxiosError,
+}>(
     'checkAuth',
     async (_, thunkApi) => {
         try {
@@ -90,8 +102,9 @@ export const checkAuth = createAsyncThunk<IUserState, void>(
                 isBanned: loginUser.isBanned,
                 regDate: loginUser.regDate,
             };
-        } catch (e) {
-            return thunkApi.rejectWithValue(e);
+        } catch (error) {
+            const errorTyped = error as AxiosError;
+            return thunkApi.rejectWithValue(errorTyped);
         }
     },
 );

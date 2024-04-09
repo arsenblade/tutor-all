@@ -35,6 +35,17 @@ export default function Profile({}: ProfilePropsInterface) {
             </div>
                 ) : null}
 
+          {auth?.user?.roles.includes('teacher') ? (
+            <div className={styles.profileMyPage}>
+              <LinkPanel
+                imgPath="/images/statistics.png"
+                link="#"
+                title="Мои ученики"
+                description="Посмотреть всех учеников"
+              />
+            </div>
+            ) : null}
+
           {auth?.user?.roles.includes('student') ? (
             <div className={styles.profileMyPage}>
               <LinkPanel

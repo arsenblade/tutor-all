@@ -1,10 +1,13 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {axiosPrivate} from 'shared/api/axios';
 import {ICorrectAnswer, ICreateHomework} from '../../types/Homework.types';
+import {AxiosError} from 'axios';
 
 const uuid = require('uuid');
 
-const createHomework = createAsyncThunk<boolean, ICreateHomework>(
+const createHomework = createAsyncThunk<boolean, ICreateHomework, {
+    rejectValue: AxiosError,
+}>(
     'createHomework',
     async ({homework, idUser}, thunkApi) => {
         try {
@@ -50,8 +53,9 @@ const createHomework = createAsyncThunk<boolean, ICreateHomework>(
             });
 
             return true;
-        } catch (e) {
-            return thunkApi.rejectWithValue(e);
+        } catch (error) {
+            const errorTyped = error as AxiosError;
+            return thunkApi.rejectWithValue(errorTyped);
         }
     },
 );
