@@ -1,4 +1,4 @@
-import {logout, registration, login, checkAuth} from './model/actions';
+import {logout, registration, login, checkAuth, updateNotification} from './model/actions';
 import { reducer as authReducer } from './model/slices';
 
 const authActions = {
@@ -6,6 +6,7 @@ const authActions = {
     registration,
     login,
     checkAuth,
+    updateNotification,
 };
 
 export {

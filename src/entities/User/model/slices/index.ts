@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {checkAuth, login, logout, registration} from '../actions';
+import {checkAuth, login, logout, registration, updateNotification} from '../actions';
 import {
     IInitialStateAuth,
 } from '../../types/User';
@@ -29,6 +29,7 @@ export const authSlice = createSlice({
                     avatar: payload.avatar,
                     regDate: payload.regDate,
                     isBanned: payload.isBanned,
+                    notificationNumbers: payload.notificationNumbers,
                 };
             })
             .addCase(registration.rejected, (state) => {
@@ -49,6 +50,7 @@ export const authSlice = createSlice({
                     avatar: payload.avatar,
                     regDate: payload.regDate,
                     isBanned: payload.isBanned,
+                    notificationNumbers: payload.notificationNumbers,
                 };
             })
             .addCase(login.rejected, (state) => {
@@ -69,6 +71,7 @@ export const authSlice = createSlice({
                     avatar: payload.avatar,
                     regDate: payload.regDate,
                     isBanned: payload.isBanned,
+                    notificationNumbers: payload.notificationNumbers,
                 };
             })
             .addCase(checkAuth.rejected, (state) => {
@@ -77,6 +80,11 @@ export const authSlice = createSlice({
             })
             .addCase(logout.fulfilled, (state, { payload }) => {
                 state.user = payload;
+            })
+            .addCase(updateNotification.fulfilled, (state, { payload }) => {
+                if (state.user) {
+                    state.user.notificationNumbers = payload.notificationNumbers;
+                }
             });
     },
 });

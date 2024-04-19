@@ -1,21 +1,25 @@
-import {ReactComponent as NotificationIcon} from 'assets/svg/notification-icon.svg';
 import {ReactComponent as ChatIcon} from 'assets/svg/chat-icon.svg';
 import {Link} from 'react-router-dom';
 import styles from './Header.module.scss';
 import {useAuth} from 'shared/hooks/useAuth';
 import {LogoutButton} from 'features/LogoutButton';
+import HeaderNotification from './HeaderNotification';
 
 export default function HeaderNavigation() {
     const auth = useAuth();
 
     return (
       <ul className={styles.headerNavigation}>
-        <li>
-          <ChatIcon className={styles.icon} />
-        </li>
-        <li>
-          <NotificationIcon className={styles.icon} />
-        </li>
+        {auth.user ? (
+          <li>
+            <ChatIcon className={styles.icon} />
+          </li>
+          ) : null}
+        {auth.user ? (
+          <li>
+            <HeaderNotification />
+          </li>
+          ) : null}
         <li>
           {!auth.user ? (
             <Link className={styles.linkAuth} to="/login">

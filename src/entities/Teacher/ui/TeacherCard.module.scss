@@ -37,8 +37,15 @@
 }
 
 .teacherImg {
+  display: block;
   width: 100%;
   border-radius: 10px;
+  object-fit: cover;
+  max-height: 128px;
+
+  @media (max-width: $tabletWidth) {
+    max-height: 260px;
+  }
 
   @media (max-width: $mobileOnlyWidth) {
     object-fit: cover;
@@ -84,6 +91,7 @@
   @media (max-width: $tabletWidth) {
     margin-top: 8px;
     row-gap: 0;
+    justify-content: flex-end;
   }
 }
 
@@ -127,7 +135,7 @@
 
 .button {
   @media (max-width: $tabletWidth) {
-    & > button {
+    a {
       background: transparent;
       opacity: 0;
       position: absolute;

@@ -1,4 +1,4 @@
-import HomeworkTeacher from '../../../widgets/HomeworkTeacher/ui/HomeworkTeacher';
+import HomeworkTeacher from 'widgets/HomeworkTeacher/ui/HomeworkTeacher';
 
 interface HomeworkPropsInterface {
 

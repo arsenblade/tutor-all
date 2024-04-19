@@ -47,3 +47,76 @@
     fill: $violet;
   }
 }
+
+.notificationButton {
+  position: relative;
+  border: none;
+  background: transparent;
+}
+
+.notificationNumber {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FFFFFF;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: $red;
+  border-radius: 50%;
+  animation: flashing 1s linear infinite;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.notifications {
+  position: relative;
+}
+
+.notificationsModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: $black100;
+  width: 400px;
+  min-height: 140px;
+  border-radius: 10px;
+  transition: 0.3s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.notificationsModalClose {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  top: 50px;
+}
+
+.notificationsModalNoNotify {
+  text-align: center;
+  font-size: 24px;
+  line-height: 130%;
+}
+
+.notificationsActions {
+  display: flex;
+  column-gap: 16px;
+  margin-top: 16px;
+}

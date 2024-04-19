@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 import Status from 'shared/ui/Status/Status';
 
 interface MostPopularTeacherPropsInterface {
-
+    image: string,
 }
 
-export default function MostPopularTeacher({}: MostPopularTeacherPropsInterface) {
+export default function MostPopularTeacher({image}: MostPopularTeacherPropsInterface) {
     return (
       <article className={styles.mostPopularTeacher}>
         <div
@@ -24,7 +24,7 @@ export default function MostPopularTeacher({}: MostPopularTeacherPropsInterface)
           </div>
           <img
             className={styles.image}
-            src="/images/teacher.jpg"
+            src={image}
             alt="Фото автора."
           />
         </div>

@@ -124,11 +124,6 @@ function Question({question, onChange, index, onClickAddAnswer, onClickRemoveAns
           Ответы к вопросу
         </h3>
         <div className={styles.answers}>
-          <SwitchTab
-            tabs={tabs}
-            onChange={handleChangeTab}
-            activeTab={activeTab}
-          />
 
           <div className={styles.answersList}>
             {question.answers.map((answer, index) => (

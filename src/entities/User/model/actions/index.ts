@@ -31,6 +31,7 @@ export const registration = createAsyncThunk<IUserState, IUserRegistrationParams
             avatar: registrationUser.avatar,
             isBanned: registrationUser.isBanned,
             regDate: registrationUser.regDate,
+            notificationNumbers: registrationUser.notificationNumbers,
         };
     } catch (error) {
         const errorTyped = error as AxiosError;
@@ -59,6 +60,7 @@ export const login = createAsyncThunk<IUserState, IUserLogin, {
                 avatar: loginUser.avatar,
                 isBanned: loginUser.isBanned,
                 regDate: loginUser.regDate,
+                notificationNumbers: loginUser.notificationNumbers,
             };
         } catch (error) {
             const errorTyped = error as AxiosError;
@@ -101,7 +103,24 @@ export const checkAuth = createAsyncThunk<IUserState, void, {
                 avatar: loginUser.avatar,
                 isBanned: loginUser.isBanned,
                 regDate: loginUser.regDate,
+                notificationNumbers: loginUser.notificationNumbers,
             };
+        } catch (error) {
+            const errorTyped = error as AxiosError;
+            return thunkApi.rejectWithValue(errorTyped);
+        }
+    },
+);
+
+export const updateNotification = createAsyncThunk<{notificationNumbers: number}, {idUser: string, notificationNumbers: number}, {
+    rejectValue: AxiosError,
+}>(
+    'updateNotification',
+    async ({idUser, notificationNumbers}, thunkApi) => {
+        try {
+            await axiosPrivate.patch(`users/${idUser}`, {notificationNumbers});
+
+            return {notificationNumbers};
         } catch (error) {
             const errorTyped = error as AxiosError;
             return thunkApi.rejectWithValue(errorTyped);

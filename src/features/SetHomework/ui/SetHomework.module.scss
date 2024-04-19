@@ -1,0 +1,35 @@
+@import "app/styles/variables";
+
+.setHomework {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: center;
+}
+
+.setSelectHomework {
+  display: flex;
+  column-gap: 64px;
+  justify-content: center;
+}
+
+.selectHomework {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 50px solid $black80;
+    transform: rotate(180deg) translate(0, 50%);
+  }
+}
+
+.actionSetHomework {
+  max-width: 300px;
+}

@@ -1,17 +1,25 @@
-import {TeacherCard} from 'entities/Teacher';
+import {asyncActionTeacher, TeacherCard} from 'entities/Teacher';
 import styles from './TeacherList.module.scss';
-
-interface TeachersListPropsInterface {
-
-}
+import {useActionCreatorsTyped} from '../../../shared/hooks/useActionsCreators';
+import {useEffect} from 'react';
+import {useAppSelector} from '../../../shared/hooks/useAppSelector';
 
 export default function TeachersList() {
+    const asyncActionCreatorsTeacher = useActionCreatorsTyped(asyncActionTeacher);
+    const { isLoading, teachers} = useAppSelector((state) => state.teacherSlice);
+
+    useEffect(() => {
+        asyncActionCreatorsTeacher.getTeachers();
+    }, []);
+
     return (
       <div className={styles.teacherList}>
-        <TeacherCard />
-        <TeacherCard />
-        <TeacherCard />
-        <TeacherCard />
+        {teachers.map((teacher) => (
+          <TeacherCard
+            key={teacher.id}
+            teacher={teacher}
+          />
+          ))}
       </div>
     );
 }

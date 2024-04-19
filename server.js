@@ -63,7 +63,7 @@ server.use(jsonServer.rewriter({
 // Эндпоинт для логина
 server.post('/registration', (req, res) => {
   try {
-    const { email, password, name, roles } = req.body;
+    const { email, password, name, roles, notificationNumbers } = req.body;
     const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db', 'db.json'), 'UTF-8'));
     const { users = [] } = db;
     // находим в бд пользователя с таким username и password
@@ -84,6 +84,7 @@ server.post('/registration', (req, res) => {
       name,
       regDate: dateToString(new Date()),
       isBanned: false,
+      notificationNumbers,
     };
 
     const token = generateToken(defaultUser.id, defaultUser.roles);
@@ -125,6 +126,7 @@ server.post('/login', (req, res) => {
         avatar: userFromBd.avatar,
         isBanned: userFromBd.isBanned,
         regDate: userFromBd.regDate,
+        notificationNumbers: userFromBd.notificationNumbers,
       },
     });
   } catch (e) {
@@ -159,6 +161,7 @@ server.get('/check-auth', (req, res) => {
         avatar: userFromBd.avatar,
         isBanned: userFromBd.isBanned,
         regDate: userFromBd.regDate,
+        notificationNumbers: userFromBd.notificationNumbers,
       },
     });
   } catch (e) {

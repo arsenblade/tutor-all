@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import {IFillingTeacherTypes} from '../../types/FillingTeacher.types';
 import {asyncActionFillingTeacher} from '../actions';
 
@@ -9,8 +9,6 @@ interface IInitialStateFillingTeacher {
     isEmptyInfo: boolean,
     error: boolean,
 }
-
-const uuid = require('uuid');
 
 const initialState: IInitialStateFillingTeacher = {
     teacher: {

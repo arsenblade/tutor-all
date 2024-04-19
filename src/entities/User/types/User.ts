@@ -7,6 +7,7 @@ export interface IUser {
     avatar: string;
     regDate: string;
     isBanned: boolean;
+    notificationNumbers: number,
 }
 
 export interface IUserRegistrationParams extends Omit<IUser, 'id' | 'pointTests' | 'regDate' | 'isBanned'> {}
@@ -16,7 +17,7 @@ export interface IUserRegistrationResponse {
     user: IUser;
 }
 
-export interface IUserLogin extends Omit<IUser, 'id' | 'name' | 'avatar' | 'pointTests' | 'regDate' | 'isBanned' | 'roles'> {}
+export interface IUserLogin extends Omit<IUser, 'id' | 'name' | 'avatar' | 'pointTests' | 'regDate' | 'isBanned' | 'roles' | 'notificationNumbers'> {}
 
 export interface IUserLoginResponse {
     token: string;

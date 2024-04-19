@@ -19,9 +19,57 @@
           "name": "5 задание ЕГЭ",
           "grade": "8/10"
         }
-      ]
+      ],
+      "notificationNumbers": 0
+    },
+    {
+      "id": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b1",
+      "roles": [
+        "student"
+      ],
+      "email": "test123@mail.ru",
+      "password": "$2a$07$yQxgIPj64562/y3KzXe/UOpZ4S6TET5.GbfOgKSlVFoD5Ji9Cq2RG",
+      "name": "Петр",
+      "regDate": "10-04-2024",
+      "isBanned": false
+    },
+    {
+      "id": "9d8ea40d-5321-4189-8a32-a8027c31ec83",
+      "roles": [
+        "teacher"
+      ],
+      "email": "test12@mail.ru",
+      "password": "$2a$07$c33jKd8DnZ35mYDqX3Nwl.HeWMo.rYpXnfs6RPzYIKLCJ4TgSn53K",
+      "name": "Арсен",
+      "regDate": "13-04-2024",
+      "isBanned": false
     }
   ],
+  "sign-up": [
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "nameTeacher": "",
+      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b1",
+      "nameStudent": "Петр",
+      "homeworksIds": [
+        "1111",
+        "3333",
+        "2222"
+      ],
+      "id": 1
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "nameTeacher": "",
+      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b2",
+      "nameStudent": "Петр2",
+      "homeworksIds": [
+        "2222"
+      ],
+      "id": 2
+    }
+  ],
+  "notifications": [],
   "teachers-info": [
     {
       "id": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
@@ -33,27 +81,11 @@
     },
     {
       "id": "5bf64340-2e85-4cfd-93e7-8787a46dbe1c",
-      "photo": "https://sun9-65.userapi.com/impg/k-Qt_pyAn--8rwMfugVpumJnbu4QXK4GwyfK3g/nfZ4NOyAwYw.jpg?size=1709x2160&quality=95&sign=1688b197a682d531ac91141bd8b31a34&type=album",
-      "experience": "4 года подготовки учеников, более 10 стобальников",
+      "photo": "https://interesnoewmire.ru/wp-content/uploads/krasivye-devushki-na-chetverg-chast-3-46-foto-cefbb3f.jpg",
+      "experience": "7 лет подготовки учеников, более 17 стобальников",
       "education": "Уральский государственный педагогический университет",
-      "name": "Тимофеева Анастасия",
-      "description": "Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете"
-    },
-    {
-      "id": "5bf64340-2e85-4cfd-93e7-8787a46dbe2c",
-      "photo": "https://sun9-65.userapi.com/impg/k-Qt_pyAn--8rwMfugVpumJnbu4QXK4GwyfK3g/nfZ4NOyAwYw.jpg?size=1709x2160&quality=95&sign=1688b197a682d531ac91141bd8b31a34&type=album",
-      "experience": "4 года подготовки учеников, более 10 стобальников",
-      "education": "Уральский государственный педагогический университет",
-      "name": "Тимофеева Анастасия",
-      "description": "Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете"
-    },
-    {
-      "id": "5bf64340-2e85-4cfd-93e7-8787a46dbe3c",
-      "photo": "https://sun9-65.userapi.com/impg/k-Qt_pyAn--8rwMfugVpumJnbu4QXK4GwyfK3g/nfZ4NOyAwYw.jpg?size=1709x2160&quality=95&sign=1688b197a682d531ac91141bd8b31a34&type=album",
-      "experience": "4 года подготовки учеников, более 10 стобальников",
-      "education": "Уральский государственный педагогический университет",
-      "name": "Тимофеева Анастасия",
-      "description": "Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете"
+      "name": "Прохорова Татьяна",
+      "description": "Привет, дорогие ученики! За последние 7 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете"
     }
   ],
   "homeworks": [

@@ -3,11 +3,12 @@ import {HomePage} from 'pages/Home';
 import {ErrorPage} from 'pages/Error';
 import {LoginPage, RegistrationPage} from 'pages/Auth';
 import {TeachersPage} from 'pages/Teachers';
-import {ProfilePage} from '../../pages/Profile';
-import {CreateTeacher} from '../../pages/CreateTeacher';
-import {TeacherPage} from '../../pages/Teacher';
-import {HomeworkPage} from '../../pages/Homework';
-import {CreateHomeworkPage} from '../../pages/CreateHomework';
+import {ProfilePage} from 'pages/Profile';
+import {CreateTeacher} from 'pages/CreateTeacher';
+import {TeacherPage} from 'pages/Teacher';
+import {HomeworkPage} from 'pages/Homework';
+import {CreateHomeworkPage} from 'pages/CreateHomework';
+import {SetHomeworkPage} from 'pages/SetHomework';
 
 interface IRoute {
     path: string,
@@ -24,6 +25,7 @@ export enum Routes {
     CREATE_TEACHER_ROUTE = '/profile/create-teacher',
     HOMEWORK_ROUTE = '/homework',
     HOMEWORK_CREATE_ROUTE = '/homework/create',
+    HOMEWORK_SET_ROUTE = '/homework/set',
     PAGE_404 = '*',
 }
 
@@ -84,6 +86,10 @@ export const teacherRoutes: IRoute[] = [
     {
         path: Routes.HOMEWORK_CREATE_ROUTE,
         Component: CreateHomeworkPage,
+    },
+    {
+        path: Routes.HOMEWORK_SET_ROUTE,
+        Component: SetHomeworkPage,
     },
 ];
 

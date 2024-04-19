@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IHomework} from '../../types/Homework.types';
 import {asyncActionCreateHomework} from '../actions';
 import {IQuestion} from 'entities/Question';
+import {IHomework} from 'entities/Homework';
 
 interface IInitialStateAuth {
     homework: IHomework,

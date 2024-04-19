@@ -27,6 +27,7 @@ export default function Registration() {
         value: 'teacher',
         name: 'Преподаватель',
     });
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [forgotPassword, setForgotPassword] = useState('');
@@ -35,7 +36,7 @@ export default function Registration() {
 
     const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        actionsAuth.registration({email, password, name: '', roles: [typeUser.value], avatar: ''}).then(() => {
+        actionsAuth.registration({email, password, name, roles: [typeUser.value], avatar: '', notificationNumbers: 0}).then(() => {
             navigate('/');
         });
     }, [email, password]);
@@ -62,6 +63,14 @@ export default function Registration() {
         className={styles.field}
         value={email}
         onChange={(event) => setEmail(event.target.value)}
+      />
+
+      <CustomInput
+        type="name"
+        placeholder="Имя пользователя"
+        className={styles.field}
+        value={name}
+        onChange={(event) => setName(event.target.value)}
       />
 
       <CustomInput

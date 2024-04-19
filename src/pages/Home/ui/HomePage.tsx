@@ -48,9 +48,9 @@ export default function HomePage() {
             Наши лучшие учителя
           </h2>
           <div className={styles.popularTeacherList}>
-            <MostPopularTeacher />
-            <MostPopularTeacher />
-            <MostPopularTeacher />
+            <MostPopularTeacher image="https://mtdata.ru/u3/photoD9EE/20305968034-0/original.jpg" />
+            <MostPopularTeacher image="https://interesnoewmire.ru/wp-content/uploads/krasivye-devushki-na-chetverg-chast-3-46-foto-cefbb3f.jpg" />
+            <MostPopularTeacher image="https://wallbox.ru/wallpapers/main2/201723/satenka.jpg" />
           </div>
         </div>
       </div>

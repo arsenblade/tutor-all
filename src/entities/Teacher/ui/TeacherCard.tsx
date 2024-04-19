@@ -1,20 +1,19 @@
 import styles from './TeacherCard.module.scss';
-import TextTruncate from 'react-text-truncate';
-import {Link} from 'react-router-dom';
 import Button from 'shared/ui/Button/Button';
 import Status from 'shared/ui/Status/Status';
+import {ITeacher} from '../types/Teacher.types';
 
 interface TeacherCardPropsInterface {
-
+  teacher: ITeacher
 }
 
-export default function TeacherCard({}: TeacherCardPropsInterface) {
+export default function TeacherCard({teacher}: TeacherCardPropsInterface) {
     return (
       <div className={styles.teacherCard}>
         <div className={styles.imgContainer}>
           <img
             className={styles.teacherImg}
-            src="/images/teacher.jpg"
+            src={teacher.photo}
             alt="Фото автора."
           />
           <div className={styles.statusOGE}>
@@ -32,10 +31,10 @@ export default function TeacherCard({}: TeacherCardPropsInterface) {
         </div>
         <div className={styles.content}>
           <div className={styles.info}>
-            <h3 className={styles.title}>Тимофеева Анастасия</h3>
+            <h3 className={styles.title}>{teacher.name}</h3>
 
             <p className={styles.description}>
-              Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете красоту языка. Также я углубляюсь в исследования лингвистики, чтобы делиться с вами самым интересным и актуальным. Давайте вместе погрузимся в мир слов!
+              {teacher.description}
             </p>
 
             <div className={styles.conditions}>
@@ -54,7 +53,7 @@ export default function TeacherCard({}: TeacherCardPropsInterface) {
             >
               <Button
                 color="Violet"
-                to="/teachers/1"
+                to={`/teachers/${teacher.id}`}
               >
                 Выбрать
               </Button>

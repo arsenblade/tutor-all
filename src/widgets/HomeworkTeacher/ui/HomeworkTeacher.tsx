@@ -16,7 +16,7 @@ export default function HomeworkTeacher({}: HomeworkTeacherPropsInterface) {
         </Link>
 
         <Link
-          to="/"
+          to="/homework/set"
           className={styles.setHomework}
         >
           Задать домашнее задание
