@@ -1,7 +1,11 @@
-import { reducer as homeworksSlice } from './model/slices';
+import { reducer as setHomeworkSlice } from './model/slices/setHomework';
+import { reducer as doingHomeworkSlice } from './model/slices/doingHomework';
+import { reducer as studentHomeworkSlice } from './model/slices/studentHomeworks';
 
 export {
-    homeworksSlice,
+    setHomeworkSlice,
+    doingHomeworkSlice,
+    studentHomeworkSlice,
 };
 
 export {default as SelectHomework} from './ui/SelectHomework';

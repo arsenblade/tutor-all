@@ -31,7 +31,8 @@
       "password": "$2a$07$yQxgIPj64562/y3KzXe/UOpZ4S6TET5.GbfOgKSlVFoD5Ji9Cq2RG",
       "name": "Петр",
       "regDate": "10-04-2024",
-      "isBanned": false
+      "isBanned": false,
+      "notificationNumbers": 0
     },
     {
       "id": "9d8ea40d-5321-4189-8a32-a8027c31ec83",
@@ -43,30 +44,77 @@
       "name": "Арсен",
       "regDate": "13-04-2024",
       "isBanned": false
+    },
+    {
+      "id": "2df2cabb-fd73-4216-bab0-9d0e1e6aba4a",
+      "roles": [
+        "student"
+      ],
+      "email": "arsenblade@mail.ru",
+      "password": "$2a$07$Xc7IplKCM9CLh.oyETdAwO7WpIvhE99cZQV05uFbx7OT8IIaDT/3m",
+      "name": "Арсен Хуранов",
+      "regDate": "22-04-2024",
+      "isBanned": false,
+      "notificationNumbers": 0
+    },
+    {
+      "id": "40ff0297-e20b-487f-8102-a43ed38fc904",
+      "roles": [
+        "student"
+      ],
+      "email": "arsen@mail.ru",
+      "password": "$2a$07$eIqGl644kumRJIKnefo9Ke0wEab6xxmlTyFRY0JFktdtxLh4hNoXq",
+      "name": "Хуранов Арсен",
+      "regDate": "22-04-2024",
+      "isBanned": false,
+      "notificationNumbers": 0
     }
   ],
   "sign-up": [
     {
       "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "nameTeacher": "",
-      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b1",
-      "nameStudent": "Петр",
-      "homeworksIds": [
-        "1111",
-        "3333",
-        "2222"
-      ],
-      "id": 1
+      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b2",
+      "nameStudent": "Татьяна Федотова",
+      "setHomeworks": [],
+      "id": 2
     },
     {
       "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "nameTeacher": "",
-      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b2",
-      "nameStudent": "Петр2",
-      "homeworksIds": [
-        "2222"
+      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b1",
+      "nameStudent": "Алексей Иванов",
+      "setHomeworks": [
+        {
+          "id": "2222",
+          "name": "5 задание ЕГЭ",
+          "lengthQuestions": 1
+        },
+        {
+          "id": "9f30101f-8f29-4a7b-89c0-0de9ba87edca",
+          "name": "Правила русского языка",
+          "lengthQuestions": 1
+        },
+        {
+          "id": "3333",
+          "name": "6 задание ЕГЭ",
+          "lengthQuestions": 1
+        },
+        {
+          "id": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "name": "Лексика и синонимы",
+          "lengthQuestions": 6
+        }
       ],
-      "id": 2
+      "id": 3
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "nameTeacher": "",
+      "idStudent": "40ff0297-e20b-487f-8102-a43ed38fc904",
+      "nameStudent": "Хуранов Арсен",
+      "setHomeworks": [],
+      "id": 4
     }
   ],
   "notifications": [],
@@ -91,7 +139,7 @@
   "homeworks": [
     {
       "id": "1111",
-      "idTeachers": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "name": "4 задание ЕГЭ",
       "questions": [
         {
@@ -109,7 +157,7 @@
     },
     {
       "id": "2222",
-      "idTeachers": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "name": "5 задание ЕГЭ",
       "questions": [
         {
@@ -127,7 +175,7 @@
     },
     {
       "id": "3333",
-      "idTeachers": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "name": "6 задание ЕГЭ",
       "questions": [
         {
@@ -144,22 +192,165 @@
       ]
     },
     {
-      "id": "cb53d6d8-079e-4140-bad0-50aae836bc5a",
-      "name": "Тест домашка",
-      "idTeacher": "",
+      "id": "9f30101f-8f29-4a7b-89c0-0de9ba87edca",
+      "name": "Правила русского языка",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "questions": [
         {
-          "id": "7066ec7a-de7c-4bd2-88a7-cb6e97db8954",
-          "text": "f",
+          "id": "8cecf635-68d8-4f5d-9184-d994eae83194",
+          "text": "Сколько правил русского языка ?",
           "type": "radio",
           "answers": [
             {
-              "id": "0809c214-a7e3-48a4-a366-0736bedd174b",
-              "text": ""
+              "id": "1b0e04cd-8d72-484b-8d2f-8f9004cd98f4",
+              "text": "23"
             },
             {
-              "id": "76c0f0b0-8447-4f37-ab84-33c76af11402",
-              "text": "2"
+              "id": "02e85268-1624-41f3-b089-1d5076fe30d2",
+              "text": "41"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "75b76ec2-a4c9-4d58-92e5-86d029e309b4",
+      "name": "Самые сложные правила русского языка ?",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "questions": [
+        {
+          "id": "6bf2086b-7afc-4cc9-a3bf-e2e5ef562073",
+          "text": "Сколько всего правил в русском языке ?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "d589a23e-30ca-4530-b959-4c641836de7b",
+              "text": "23"
+            },
+            {
+              "id": "cdb6e9bb-870d-4ed7-b0dd-9e55c83805f7",
+              "text": "76"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+      "name": "Лексика и синонимы",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "questions": [
+        {
+          "id": "75ce5b10-afcb-4bc8-95b1-6fbb912aa424",
+          "text": "Выберите синоним слова \"большой\"",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "ee127a50-5930-4893-9fbf-ff23c0f59ea7",
+              "text": "маленький"
+            },
+            {
+              "id": "ab546c22-c4de-41b5-b406-da5d54a9dad1",
+              "text": "огромный"
+            },
+            {
+              "id": "e02d5093-52de-4f59-9d7a-28c1e27cf47f",
+              "text": "красивый"
+            }
+          ]
+        },
+        {
+          "id": "db10d8c1-a510-4e6c-ace2-c99057003b6f",
+          "text": "Какое слово является синонимом к \"смелый\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "f6eec266-6c1e-45df-82ee-82c1be8d5c61",
+              "text": "робкий"
+            },
+            {
+              "id": "65a3b59e-284a-4a3b-a00e-4436ea9db198",
+              "text": "трусливый"
+            },
+            {
+              "id": "e6e0e009-7cb2-411d-8bb0-e999cd421f8d",
+              "text": "отважный"
+            }
+          ]
+        },
+        {
+          "id": "aea51acb-6f07-46e5-9ed0-da93d28fe944",
+          "text": "Какое слово синонимично \"радость\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "6802492c-acfa-4848-be32-95661bb34fdd",
+              "text": "грусть"
+            },
+            {
+              "id": "c50beea1-0213-46be-99a8-17083a5489a3",
+              "text": "счастье"
+            },
+            {
+              "id": "21fbf1b3-8d5d-4480-a4fa-825b5cfc416c",
+              "text": "уныние"
+            }
+          ]
+        },
+        {
+          "id": "c1597b7a-b6b6-47d3-86cb-dfffc958feb3",
+          "text": "Выберите синоним слова \"быстро\"",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "3a004d59-0e6a-4e3d-a856-258c4589a7f2",
+              "text": "медленно"
+            },
+            {
+              "id": "36c235e8-f2c9-49d2-b265-bda650613fac",
+              "text": "быстрее"
+            },
+            {
+              "id": "6101472f-41ca-4355-a920-fa67511e38c1",
+              "text": "скоро"
+            }
+          ]
+        },
+        {
+          "id": "be48dc5e-ef37-4c58-bed7-c1c83f353bc9",
+          "text": "Какое слово является синонимом \"умный\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "47d8bfd5-20d2-4fde-9736-d0e93897b7ca",
+              "text": "глупый"
+            },
+            {
+              "id": "1a636449-bd20-48d7-b520-c33bc3df3550",
+              "text": "умелый"
+            },
+            {
+              "id": "e805f74e-2fb4-4f4d-833e-5aee75afaaf2",
+              "text": "красивый"
+            }
+          ]
+        },
+        {
+          "id": "e717340c-242b-4e3a-8ba0-5649637f929d",
+          "text": "Какое слово синонимично \"любопытный\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "cf8db117-d809-4d0d-bd12-81754a098abf",
+              "text": "скучный"
+            },
+            {
+              "id": "d2dfeb45-693e-4feb-8da2-d3dbcf64919f",
+              "text": "радостный"
+            },
+            {
+              "id": "5051b4bf-5f6e-4300-9a6b-7a197b898cf6",
+              "text": "любознательный"
             }
           ]
         }
@@ -181,6 +372,112 @@
         ],
         "idHomework": "cb53d6d8-079e-4140-bad0-50aae836bc5a",
         "idQuestion": "7066ec7a-de7c-4bd2-88a7-cb6e97db8954"
+      }
+    ],
+    [
+      {
+        "id": "d930340c-5fd5-4a24-adf1-fb4dd8ddf649",
+        "correctAnswerIds": [
+          "599e73d5-5e25-48ea-b2cd-df330133d3d3"
+        ],
+        "idHomework": "19acfd1b-b847-45a8-8046-a8f7867cd8ca",
+        "idQuestion": "ea9c7d9a-778a-469e-a11d-25b157482756"
+      }
+    ],
+    [
+      {
+        "id": "8f7a3a01-6d76-4b9e-9140-fa0b5b8ef394",
+        "correctAnswerIds": [
+          "b6011772-b9ac-4f5e-ac2a-04987f4dc1f2"
+        ],
+        "idHomework": "16fd352d-5784-4aae-bdc5-28d7c079f34b",
+        "idQuestion": "b90f1329-1764-4c83-9d69-c85eba356539"
+      }
+    ],
+    [
+      {
+        "id": "f3c9165f-ab8d-49f5-bdc3-d5f5e1c2d42c",
+        "correctAnswerIds": [
+          "d0d24b1a-751c-442a-aaf8-47f420d92c49"
+        ],
+        "idHomework": "288bf794-6abf-4da4-b0eb-a433575b9708",
+        "idQuestion": "50af71cf-0ea9-49c8-82f3-3f8e4d238c05"
+      }
+    ],
+    [
+      {
+        "id": "1170b5d4-01ee-49aa-9825-0fd2f9d3d7c5",
+        "correctAnswerIds": [],
+        "idHomework": "c85d722d-ac5e-42d6-b464-b47f573d403d",
+        "idQuestion": "126dd421-e314-45b8-b91a-04e450f52a72"
+      }
+    ],
+    [
+      {
+        "id": "cf0b39b7-48dd-41da-bdaf-117c0c9f39c2",
+        "correctAnswerIds": [],
+        "idHomework": "9f30101f-8f29-4a7b-89c0-0de9ba87edca",
+        "idQuestion": "8cecf635-68d8-4f5d-9184-d994eae83194"
+      }
+    ],
+    [
+      {
+        "id": "931e346e-7057-4fe2-9ff0-62a87884517c",
+        "correctAnswerIds": [
+          "d589a23e-30ca-4530-b959-4c641836de7b"
+        ],
+        "idHomework": "75b76ec2-a4c9-4d58-92e5-86d029e309b4",
+        "idQuestion": "6bf2086b-7afc-4cc9-a3bf-e2e5ef562073"
+      }
+    ],
+    [
+      {
+        "id": "07c60be9-aa4f-4f21-b8cf-4196f02a1ec3",
+        "correctAnswerIds": [
+          "ab546c22-c4de-41b5-b406-da5d54a9dad1"
+        ],
+        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+        "idQuestion": "75ce5b10-afcb-4bc8-95b1-6fbb912aa424"
+      },
+      {
+        "id": "fafaf1db-1ce4-427b-8ab9-fac8ad46bc7d",
+        "correctAnswerIds": [
+          "e6e0e009-7cb2-411d-8bb0-e999cd421f8d"
+        ],
+        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+        "idQuestion": "db10d8c1-a510-4e6c-ace2-c99057003b6f"
+      },
+      {
+        "id": "cce73ee3-53a0-472f-9274-179068cadfb2",
+        "correctAnswerIds": [
+          "c50beea1-0213-46be-99a8-17083a5489a3"
+        ],
+        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+        "idQuestion": "aea51acb-6f07-46e5-9ed0-da93d28fe944"
+      },
+      {
+        "id": "9f8e1d1f-236a-40a3-8bc2-ee1ee8fe7bde",
+        "correctAnswerIds": [
+          "6101472f-41ca-4355-a920-fa67511e38c1"
+        ],
+        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+        "idQuestion": "c1597b7a-b6b6-47d3-86cb-dfffc958feb3"
+      },
+      {
+        "id": "377de8ab-8871-46a2-ad91-e3ef8703c62f",
+        "correctAnswerIds": [
+          "1a636449-bd20-48d7-b520-c33bc3df3550"
+        ],
+        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+        "idQuestion": "be48dc5e-ef37-4c58-bed7-c1c83f353bc9"
+      },
+      {
+        "id": "59eaa6a6-9bf6-43ba-9e9a-53ba4076fc20",
+        "correctAnswerIds": [
+          "5051b4bf-5f6e-4300-9a6b-7a197b898cf6"
+        ],
+        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+        "idQuestion": "e717340c-242b-4e3a-8ba0-5649637f929d"
       }
     ]
   ]

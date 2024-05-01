@@ -101,6 +101,32 @@ export const authSlice = createSlice({
         removeQuestion(state, action: PayloadAction<{questionId: string}>) {
             state.homework.questions = state.homework.questions.filter((question) => question.id !== action.payload.questionId);
         },
+        returnDefaultData(state) {
+            state.homework = {
+                id: uuid.v4(),
+                name: '',
+                idTeacher: '',
+                questions: [
+                    {
+                        id: uuid.v4(),
+                        text: '',
+                        type: 'radio',
+                        answers: [
+                            {
+                                id: uuid.v4(),
+                                text: '',
+                                isCorrect: false,
+                            },
+                            {
+                                id: uuid.v4(),
+                                text: '',
+                                isCorrect: false,
+                            },
+                        ],
+                    },
+                ],
+            };
+        },
     },
     extraReducers: (builder) => {
         builder

@@ -19,15 +19,15 @@ const getStudents = createAsyncThunk<IStudent[], {idTeacher: string}, {
     },
 );
 
-const setHomework = createAsyncThunk<{homeworksIds: string[], id: number}, {homeworksIds: string[], id: number}, {
+const setHomework = createAsyncThunk<{setHomeworks: {id: string, name: string}[], id: number}, {selectedHomework: {id: string, name: string}[], id: number}, {
     rejectValue: AxiosError,
 }>(
     'setHomework',
-    async ({homeworksIds, id}, thunkApi) => {
+    async ({selectedHomework, id}, thunkApi) => {
         try {
-            await axiosPrivate.patch(`sign-up/${id}`, {homeworksIds});
+            await axiosPrivate.patch(`sign-up/${id}`, {setHomeworks: selectedHomework});
 
-            return {homeworksIds, id};
+            return {setHomeworks: selectedHomework, id};
         } catch (error) {
             const errorTyped = error as AxiosError;
             return thunkApi.rejectWithValue(errorTyped);

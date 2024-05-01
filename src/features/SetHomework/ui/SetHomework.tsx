@@ -18,10 +18,10 @@ export default function SetHomework({}: SetHomeworkPropsInterface) {
     const asyncActionCreatorsHomeworks = useActionCreatorsTyped(asyncActionHomeworks);
 
     const {students, isLoading: isLoadingStudent} = useAppSelector((state) => state.studentsSlice);
-    const {homeworks} = useAppSelector((state) => state.homeworksSlice);
+    const {homeworks} = useAppSelector((state) => state.setHomeworkSlice);
 
     const [selectedStudent, setSelectedStudent] = useState<IStudent | null>(null);
-    const [selectedHomeworks, setSelectedHomeworks] = useState<string[]>([]);
+    const [selectedHomeworks, setSelectedHomeworks] = useState<{id: string, name: string, lengthQuestions: number}[]>([]);
     const [visibleHomeworks, setVisibleHomeworks] = useState<IHomework[]>([]);
     const [isLoadingHomework, setIsLoadingHomework] = useState(true);
     const isMount = useRef(false);
@@ -30,23 +30,23 @@ export default function SetHomework({}: SetHomeworkPropsInterface) {
         setSelectedStudent(student);
     };
 
-    const handleChangeHomework = (homeworkId: string, isChecked: boolean) => {
+    const handleChangeHomework = (selectedHomework: {id: string, name: string, lengthQuestions: number}, isChecked: boolean) => {
         if (isChecked) {
-            setSelectedHomeworks((prevState) => [...prevState, homeworkId]);
+            setSelectedHomeworks((prevState) => [...prevState, selectedHomework]);
         } else {
-            setSelectedHomeworks((prevState) => prevState.filter((hId) => hId !== homeworkId));
+            setSelectedHomeworks((prevState) => prevState.filter((hId) => hId.id !== selectedHomework.id));
         }
     };
 
     const handleSetHomework = () => {
         if (selectedStudent) {
-            asyncActionCreatorsStudents.setHomework({id: selectedStudent.id, homeworksIds: [...selectedStudent.homeworksIds, ...selectedHomeworks]}).then((response) => {
+            asyncActionCreatorsStudents.setHomework({id: selectedStudent.id, selectedHomework: [...selectedStudent.setHomeworks, ...selectedHomeworks]}).then((response) => {
                 setSelectedHomeworks([]);
                 setSelectedStudent((prevState) => {
                     if (prevState) {
                         return {
                             ...prevState,
-                            homeworksIds: [...selectedStudent.homeworksIds, ...selectedHomeworks],
+                            homeworksIds: [...selectedStudent.setHomeworks, ...selectedHomeworks],
                         };
                     }
 
@@ -67,7 +67,7 @@ export default function SetHomework({}: SetHomeworkPropsInterface) {
                 if (firstStudent) {
                     setSelectedStudent(firstStudent);
                     setVisibleHomeworks(homeworks.map((homework) => {
-                        if (firstStudent.homeworksIds.includes(homework.id)) {
+                        if (firstStudent.setHomeworks?.some((setHomework) => setHomework.id === homework.id)) {
                             return {
                                 ...homework,
                                 isAssigned: true,
@@ -87,7 +87,7 @@ export default function SetHomework({}: SetHomeworkPropsInterface) {
         if (isMount.current && selectedStudent) {
             setSelectedHomeworks([]);
             setVisibleHomeworks(homeworks.map((homework) => {
-                if (selectedStudent.homeworksIds.includes(homework.id)) {
+                if (selectedStudent.setHomeworks?.some((setHomework) => setHomework.id === homework.id)) {
                     return {
                         ...homework,
                         isAssigned: true,
@@ -115,7 +115,7 @@ export default function SetHomework({}: SetHomeworkPropsInterface) {
           <SelectHomework
             homeworks={visibleHomeworks}
             isLoading={isLoadingHomework}
-            selectedHomeworksIds={selectedHomeworks}
+            selectedHomeworks={selectedHomeworks}
             onChange={handleChangeHomework}
           />
         </div>

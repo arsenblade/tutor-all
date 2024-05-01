@@ -2,13 +2,13 @@ import styles from './SelectHomework.module.scss';
 import {IHomework} from '../types/Homework.types';
 
 interface SelectHomeworkPropsInterface {
-    selectedHomeworksIds: string[]
-    onChange: (homeworkId: string, isChecked: boolean) => void;
+    selectedHomeworks: {id: string, name: string}[]
+    onChange: (selectedHomework: {id: string, name: string, lengthQuestions: number}, isChecked: boolean) => void;
     homeworks: IHomework[]
     isLoading: boolean
 }
 
-export default function SelectHomework({homeworks, isLoading, selectedHomeworksIds, onChange}: SelectHomeworkPropsInterface) {
+export default function SelectHomework({homeworks, isLoading, selectedHomeworks, onChange}: SelectHomeworkPropsInterface) {
     return (
       <div className={styles.selectHomework}>
         <h3 className={styles.title}>Домашние задания</h3>
@@ -23,8 +23,8 @@ export default function SelectHomework({homeworks, isLoading, selectedHomeworksI
               className={styles.homeworkInput}
               type="checkbox"
               name="homework"
-              checked={selectedHomeworksIds.includes(homework.id)}
-              onChange={(event) => onChange(homework.id, event.currentTarget.checked)}
+              checked={selectedHomeworks.some((selectedHomework) => selectedHomework.id === homework.id)}
+              onChange={(event) => onChange({id: homework.id, name: homework.name, lengthQuestions: homework.questions.length}, event.currentTarget.checked)}
               disabled={homework.isAssigned}
             />
             <label

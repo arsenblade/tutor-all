@@ -3,6 +3,6 @@ export interface IStudent {
     nameTeacher: string,
     idStudent: string,
     nameStudent: string,
-    homeworksIds: string[];
+    setHomeworks: {id: string, name: string}[];
     id: number
 }

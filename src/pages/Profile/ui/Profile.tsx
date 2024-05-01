@@ -50,7 +50,7 @@ export default function Profile({}: ProfilePropsInterface) {
             <div className={styles.profileMyPage}>
               <LinkPanel
                 imgPath="/images/statistics.png"
-                link="#"
+                link="/profile/statistic"
                 title="Статистика"
                 description="Посмотреть мою успеваемость"
               />

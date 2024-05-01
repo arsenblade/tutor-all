@@ -1,0 +1,54 @@
+@import "app/styles/variables";
+
+.homeworkStudent {
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 130%;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.homeworkStudentList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+  margin-top: 32px;
+}
+
+.homeworkLink {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid $blue;
+  padding: 24px;
+  border-radius: 32px;
+  font-size: 26px;
+  line-height: 130%;
+  font-weight: 700;
+  transition: 0.3s;
+  width: 100%;
+
+  &:hover {
+    background-color: rgba($blue, 0.2);
+  }
+}
+
+.homeworkStudentTitle {
+  font-size: 20px;
+  line-height: 130%;
+  margin: 0;
+}
+
+.homeworkStudentQuestions {
+  font-size: 18px;
+  line-height: 130%;
+  color: $gray;
+}

@@ -1,0 +1,66 @@
+@import "app/styles/variables";
+
+.statisticStudent {
+  margin-top: 48px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 130%;
+  text-align: center;
+  margin: 0;
+}
+
+.selectStatistic {
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+  border: 1px solid $blue;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.statisticTable {
+  margin-top: 16px;
+}
+
+.selectStatisticNumber {
+  font-size: 32px;
+  line-height: 130%;
+  font-weight: 700;
+}
+
+.selectStatisticTable {
+  display: grid;
+  grid-template-columns: 1fr 230px 230px;
+  row-gap: 16px;
+  column-gap: 8px;
+  flex: 1;
+}
+
+.selectStatisticTitle {
+  font-size: 26px;
+  line-height: 130%;
+  margin: 0;
+}
+
+.selectStatisticPoints {
+  font-size: 22px;
+  line-height: 130%;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.selectStatisticColumn {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: $blue;
+}
+
+.selectStatisticTitle {
+  font-size: 22px;
+  line-height: 130%;
+  text-align: center;
+}

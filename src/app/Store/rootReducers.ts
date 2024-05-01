@@ -5,7 +5,7 @@ import {fillingTeacherSlice} from 'features/FillingTeacher';
 import {teacherSlice} from 'entities/Teacher';
 import {notificationSlice} from 'entities/Notification';
 import {studentsSlice} from 'entities/Student';
-import {homeworksSlice} from 'entities/Homework';
+import {setHomeworkSlice, doingHomeworkSlice, studentHomeworkSlice} from 'entities/Homework';
 
 export const rootReducers = combineReducers({
     authReducer,
@@ -14,5 +14,7 @@ export const rootReducers = combineReducers({
     teacherSlice,
     notificationSlice,
     studentsSlice,
-    homeworksSlice,
+    setHomeworkSlice,
+    doingHomeworkSlice,
+    studentHomeworkSlice,
 });

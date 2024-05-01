@@ -6,8 +6,9 @@ import {ChangeEvent, useCallback, useRef} from 'react';
 import {useAppSelector} from 'shared/hooks/useAppSelector';
 import {Question} from 'entities/Question';
 import {asyncActionCreateHomework} from '../model/actions';
-import {useAuth} from '../../../shared/hooks/useAuth';
+import {useAuth} from 'shared/hooks/useAuth';
 import styles from './CreateHomework.module.scss';
+import {useNavigate} from 'react-router-dom';
 
 interface CreateHomeworkPropsInterface {
 
@@ -19,6 +20,7 @@ export default function CreateHomework({}: CreateHomeworkPropsInterface) {
     const actionsAsyncHomework = useActionCreatorsTyped(asyncActionCreateHomework);
     const refTest = useRef<HTMLDivElement | null>(null);
     const auth = useAuth();
+    const navigation = useNavigate();
 
     const addCreateHomework = useCallback(() => {
         actionsHomework.addQuestion();
@@ -33,7 +35,10 @@ export default function CreateHomework({}: CreateHomeworkPropsInterface) {
     }, [homework.name]);
 
     const handleSubmitCreateHomework = () => {
-        actionsAsyncHomework.createHomework({homework, idUser: auth.user?.id || ''});
+        actionsAsyncHomework.createHomework({homework, idUser: auth.user?.id || ''}).then((response) => {
+            actionsHomework.returnDefaultData();
+            navigation('/homework');
+        });
     };
 
     const handleClickRemoveAnswer = (indexQuestion: number, indexAnswer: number) => {

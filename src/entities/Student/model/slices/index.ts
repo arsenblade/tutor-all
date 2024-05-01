@@ -42,7 +42,7 @@ export const studentsSlice = createSlice({
                     if (payload.id === student.id) {
                         return {
                             ...student,
-                            homeworksIds: payload.homeworksIds,
+                            setHomeworks: payload.setHomeworks,
                         };
                     }
                     

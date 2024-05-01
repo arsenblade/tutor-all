@@ -3,7 +3,6 @@ import {AdvantagesTeachers} from 'widgets/AdvantagesTeachers';
 import {AdvantagesStudent} from 'widgets/AdvantagesStudent';
 import SwitchTab from 'shared/ui/SwitchTab/SwitchTab';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
 import {MostPopularTeacher} from 'entities/Teacher';
 
 const tabs = [

@@ -9,6 +9,8 @@ import {TeacherPage} from 'pages/Teacher';
 import {HomeworkPage} from 'pages/Homework';
 import {CreateHomeworkPage} from 'pages/CreateHomework';
 import {SetHomeworkPage} from 'pages/SetHomework';
+import {ProfileStatisticPage} from 'pages/ProfileStatistic';
+import {DoingHomeworkPage} from 'pages/DoingHomework';
 
 interface IRoute {
     path: string,
@@ -24,8 +26,10 @@ export enum Routes {
     PROFILE_ROUTE = '/profile',
     CREATE_TEACHER_ROUTE = '/profile/create-teacher',
     HOMEWORK_ROUTE = '/homework',
+    HOMEWORK_DOING_ROUTE = '/homework/:id',
     HOMEWORK_CREATE_ROUTE = '/homework/create',
     HOMEWORK_SET_ROUTE = '/homework/set',
+    PROFILE_STATISTIC_ROUTE = '/profile/statistic',
     PAGE_404 = '*',
 }
 
@@ -68,6 +72,14 @@ export const studentRoutes: IRoute[] = [
         path: Routes.HOMEWORK_ROUTE,
         Component: HomeworkPage,
     },
+    {
+        path: Routes.PROFILE_STATISTIC_ROUTE,
+        Component: ProfileStatisticPage,
+    },
+    {
+        path: Routes.HOMEWORK_DOING_ROUTE,
+        Component: DoingHomeworkPage,
+    },
 ];
 
 export const teacherRoutes: IRoute[] = [
@@ -90,6 +102,10 @@ export const teacherRoutes: IRoute[] = [
     {
         path: Routes.HOMEWORK_SET_ROUTE,
         Component: SetHomeworkPage,
+    },
+    {
+        path: Routes.PROFILE_STATISTIC_ROUTE,
+        Component: ProfileStatisticPage,
     },
 ];
 

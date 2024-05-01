@@ -2,20 +2,20 @@ import {createSlice} from '@reduxjs/toolkit';
 import {asyncActionHomeworks} from '../actions';
 import {IHomework} from '../../types/Homework.types';
 
-interface IInitialStateStudents {
+interface IInitialStateSetHomework {
     homeworks: IHomework[],
     isLoading: boolean,
     error: boolean,
 }
 
-const initialState: IInitialStateStudents = {
+const initialState: IInitialStateSetHomework = {
     homeworks: [],
     isLoading: false,
     error: false,
 };
 
-export const homeworksSlice = createSlice({
-    name: 'homeworks',
+export const setHomeworkSlice = createSlice({
+    name: 'setHomework',
     initialState,
     reducers: {
     },
@@ -35,7 +35,7 @@ export const homeworksSlice = createSlice({
     },
 });
 
-export const { reducer } = homeworksSlice;
+export const { reducer } = setHomeworkSlice;
 export const actionsHomeworks = {
-    ...homeworksSlice.actions,
+    ...setHomeworkSlice.actions,
 };
