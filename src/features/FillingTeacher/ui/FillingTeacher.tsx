@@ -18,6 +18,7 @@ export default function FillingTeacher() {
 
     const auth = useAuth();
 
+    const [priceValue, setPriceValue] = useState(teacher.price);
     const [photoValue, setPhotoValue] = useState(teacher.photo);
     const [experienceValue, setExperienceValue] = useState(teacher.experience);
     const [educationValue, setEducationValue] = useState(teacher.education);
@@ -46,6 +47,7 @@ export default function FillingTeacher() {
                     education: educationValue,
                     name: nameValue,
                     description: descriptionValue,
+                    price: priceValue,
                 },
             });
         }
@@ -108,6 +110,14 @@ export default function FillingTeacher() {
               onChange={(event) => setDescriptionValue(event.target.value)}
               placeholder="Расскажите о себе"
             />
+
+            <CustomInput
+              type="text"
+              placeholder="Цена за ваши услуги"
+              value={priceValue}
+              onChange={(event) => setPriceValue(event.target.value)}
+            />
+
             <Button
               color="Violet"
               onClick={handleClickSubmit}

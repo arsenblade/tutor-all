@@ -4,6 +4,7 @@ export interface IFillingTeacherTypes {
     photo: string,
     experience: string,
     education: string,
+    price: string,
 }
 
 export interface IGetTeacherInfoParams {

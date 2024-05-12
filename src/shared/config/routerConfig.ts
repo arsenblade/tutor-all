@@ -26,7 +26,7 @@ export enum Routes {
     PROFILE_ROUTE = '/profile',
     CREATE_TEACHER_ROUTE = '/profile/create-teacher',
     HOMEWORK_ROUTE = '/homework',
-    HOMEWORK_DOING_ROUTE = '/homework/:id',
+    HOMEWORK_DOING_ROUTE = '/homework/doing/:id',
     HOMEWORK_CREATE_ROUTE = '/homework/create',
     HOMEWORK_SET_ROUTE = '/homework/set',
     PROFILE_STATISTIC_ROUTE = '/profile/statistic',

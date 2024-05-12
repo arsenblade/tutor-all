@@ -1,7 +1,8 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {axiosPrivate} from 'shared/api/axios';
-import {ICorrectAnswer, ICreateHomework} from '../../types/Homework.types';
+import {ICreateHomework} from '../../types/Homework.types';
 import {AxiosError} from 'axios';
+import {ICorrectAnswer} from 'entities/Homework';
 
 const uuid = require('uuid');
 
@@ -34,6 +35,7 @@ const createHomework = createAsyncThunk<boolean, ICreateHomework, {
                         correctAnswerIds: correctAnswersIds,
                         idHomework: homework.id,
                         idQuestion: question.id,
+                        allAnswers: question.answers.length,
                     });
 
                     return {
@@ -47,7 +49,10 @@ const createHomework = createAsyncThunk<boolean, ICreateHomework, {
 
             Promise.all([
                 await axiosPrivate.post('/homeworks/', createHomework),
-                await axiosPrivate.post('/correct-answers/', correctAnswers),
+                await axiosPrivate.post('/correct-answers/', {
+                    idHomework: homework.id,
+                    answers: correctAnswers,
+                }),
             ]).then((responses) => {
                 console.log(responses);
             });

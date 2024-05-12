@@ -26,8 +26,9 @@ export default function HomeworkStudent({}: HomeworkStudentPropsInterface) {
         <div className={styles.homeworkStudentList}>
           {homeworks.map((homework) => (
             <Link
-              to={`/homework/${homework.id}`}
+              to={`/homework/doing/${homework.id}`}
               className={styles.homeworkLink}
+              key={homework.id}
             >
               <h3 className={styles.homeworkStudentTitle}>{homework.name}</h3>
               <span className={styles.homeworkStudentQuestions}>{pluralizeRu(homework.lengthQuestions, ['вопрос', 'вопроса', 'вопросов'], true)}</span>

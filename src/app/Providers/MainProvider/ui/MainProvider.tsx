@@ -1,5 +1,5 @@
 import React, {FC, useEffect} from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter, useLocation} from 'react-router-dom';
 import {Header} from 'widgets/Header';
 import AppRouter from '../../../Router/Router';
 import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';

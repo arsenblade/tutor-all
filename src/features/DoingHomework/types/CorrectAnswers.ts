@@ -1,4 +1,4 @@
-export interface ICorrectAnswer {
+export interface IUserCorrectAnswer {
     idQuestion: string,
     idsAnswer: string[],
 }

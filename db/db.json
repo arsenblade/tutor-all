@@ -70,11 +70,73 @@
       "notificationNumbers": 0
     }
   ],
+  "grades-students": [
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b1",
+      "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+      "allQuestionLength": 5,
+      "points": 2,
+      "nameHomework": "Лексика и синонимы №2",
+      "valuePercent": 40,
+      "id": 1
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b1",
+      "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+      "allQuestionLength": 6,
+      "points": 3,
+      "nameHomework": "Лексика и синонимы",
+      "valuePercent": 50,
+      "id": 2
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idStudent": "40ff0297-e20b-487f-8102-a43ed38fc904",
+      "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+      "allQuestionLength": 6,
+      "points": 4,
+      "nameHomework": "Лексика и синонимы",
+      "valuePercent": 67,
+      "id": 3
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idStudent": "40ff0297-e20b-487f-8102-a43ed38fc904",
+      "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+      "allQuestionLength": 5,
+      "points": 5,
+      "nameHomework": "Лексика и синонимы №2",
+      "valuePercent": 100,
+      "id": 4
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idStudent": "2df2cabb-fd73-4216-bab0-9d0e1e6aba4a",
+      "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+      "allQuestionLength": 5,
+      "points": 1,
+      "nameHomework": "Лексика и синонимы №2",
+      "valuePercent": 20,
+      "id": 5
+    },
+    {
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "idStudent": "2df2cabb-fd73-4216-bab0-9d0e1e6aba4a",
+      "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+      "allQuestionLength": 6,
+      "points": 5,
+      "nameHomework": "Лексика и синонимы",
+      "valuePercent": 84,
+      "id": 6
+    }
+  ],
   "sign-up": [
     {
       "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
       "nameTeacher": "",
-      "idStudent": "2261a4b3-4f9f-4ce3-9311-a3f3f85b82b2",
+      "idStudent": "2df2cabb-fd73-4216-bab0-9d0e1e6aba4a",
       "nameStudent": "Татьяна Федотова",
       "setHomeworks": [],
       "id": 2
@@ -99,11 +161,6 @@
           "id": "3333",
           "name": "6 задание ЕГЭ",
           "lengthQuestions": 1
-        },
-        {
-          "id": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-          "name": "Лексика и синонимы",
-          "lengthQuestions": 6
         }
       ],
       "id": 3
@@ -125,7 +182,8 @@
       "experience": "4 года подготовки учеников, более 10 стобальников",
       "education": "Уральский государственный педагогический университет",
       "name": "Тимофеева Анастасия",
-      "description": "Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете"
+      "description": "Привет, дорогие ученики! За последние 5 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете",
+      "price": "1600"
     },
     {
       "id": "5bf64340-2e85-4cfd-93e7-8787a46dbe1c",
@@ -133,7 +191,8 @@
       "experience": "7 лет подготовки учеников, более 17 стобальников",
       "education": "Уральский государственный педагогический университет",
       "name": "Прохорова Татьяна",
-      "description": "Привет, дорогие ученики! За последние 7 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете"
+      "description": "Привет, дорогие ученики! За последние 7 лет я страстно занимаюсь преподаванием русского языка. Мое вдохновение - видеть, как вы раскрываете",
+      "price": "900"
     }
   ],
   "homeworks": [
@@ -355,130 +414,213 @@
           ]
         }
       ]
+    },
+    {
+      "id": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+      "name": "Лексика и синонимы №2",
+      "idTeacher": "5bf64340-2e85-4cfd-93e7-8787a46dbe8c",
+      "questions": [
+        {
+          "id": "aa516f7d-abef-4c39-b4b3-81336746b250",
+          "text": "Какое слово синонимично \"благодарный\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "d06f866e-44c1-4eed-bac6-01170259289d",
+              "text": "испытывающий глубокую благодарность и признательность"
+            },
+            {
+              "id": "66e5090b-9f10-41cf-8c03-3d6d2b98dadc",
+              "text": "признавший труд и помощь других"
+            },
+            {
+              "id": "112a45ff-fd92-440d-87a2-1bf38511abfd",
+              "text": "осознающий добрые дела и отзывчивость окружающих"
+            }
+          ]
+        },
+        {
+          "id": "11e50ed6-629b-44d8-86da-dec601c7c19d",
+          "text": "Какое слово является синонимом \"гордый\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "1769c922-bab9-4429-9e44-92a6f9b43f75",
+              "text": "чувствующий себя превосходно и достойно"
+            },
+            {
+              "id": "3641a3e7-d1f8-441c-9cee-1047982ab353",
+              "text": "полный уверенности в себе и своих силах"
+            },
+            {
+              "id": "4196d4cf-bb8a-4c0b-aeda-fcc761248143",
+              "text": "испытывающий гордость и самоуважение"
+            }
+          ]
+        },
+        {
+          "id": "77c7a966-59c9-4c6e-89c9-74bfba529dff",
+          "text": "Какое слово синонимично \"обширный\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "945bd37d-6583-4c80-816a-4a76673b6ad7",
+              "text": "имеющий большую площадь и пространство"
+            },
+            {
+              "id": "18c6bf87-368a-45a7-be64-2acbc2b29451",
+              "text": "распространенный и широко известный"
+            },
+            {
+              "id": "fbdb16df-5999-4641-8344-61b4ad7dbec4",
+              "text": "пространственный и объемный"
+            }
+          ]
+        },
+        {
+          "id": "883d9ecf-7e9f-4538-9cc7-b0ca00b8d1b0",
+          "text": "Выберите синоним слова \"замечательный\":",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "d2f2d074-1f98-448e-a5af-e632553640b5",
+              "text": "поразительный своим великолепием и красотой"
+            },
+            {
+              "id": "7a1eeb77-1c1b-4870-ac83-c22993adb910",
+              "text": "восхитительный и вызывающий восторг"
+            },
+            {
+              "id": "fcb91125-2106-40ab-b4c0-d65034f5b77e",
+              "text": "потрясающий своей уникальностью и превосходством"
+            }
+          ]
+        },
+        {
+          "id": "ab3ad725-c98a-4a03-8d02-99084109bd0d",
+          "text": "Какое слово является синонимом \"известный\"?",
+          "type": "radio",
+          "answers": [
+            {
+              "id": "95bc073e-56ed-46b9-bb22-f2fda05bebd3",
+              "text": "признанный и популярный в широких кругах"
+            },
+            {
+              "id": "9b79c3f1-7211-4826-8e07-be59f0bea968",
+              "text": "общеизвестный и широко распространенный"
+            },
+            {
+              "id": "0f61bbcd-db55-4cd9-b582-7a4fd4e1a87f",
+              "text": "пользующийся славой и признанием"
+            }
+          ]
+        }
+      ]
     }
   ],
   "correct-answers": [
     {
-      "id": "1",
-      "correctAnswerId": "2",
-      "idHomework": "1111",
-      "idQuestion": "1"
+      "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+      "answers": [
+        {
+          "id": "07c60be9-aa4f-4f21-b8cf-4196f02a1ec3",
+          "correctAnswerIds": [
+            "ab546c22-c4de-41b5-b406-da5d54a9dad1"
+          ],
+          "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "idQuestion": "75ce5b10-afcb-4bc8-95b1-6fbb912aa424"
+        },
+        {
+          "id": "fafaf1db-1ce4-427b-8ab9-fac8ad46bc7d",
+          "correctAnswerIds": [
+            "e6e0e009-7cb2-411d-8bb0-e999cd421f8d"
+          ],
+          "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "idQuestion": "db10d8c1-a510-4e6c-ace2-c99057003b6f"
+        },
+        {
+          "id": "cce73ee3-53a0-472f-9274-179068cadfb2",
+          "correctAnswerIds": [
+            "c50beea1-0213-46be-99a8-17083a5489a3"
+          ],
+          "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "idQuestion": "aea51acb-6f07-46e5-9ed0-da93d28fe944"
+        },
+        {
+          "id": "9f8e1d1f-236a-40a3-8bc2-ee1ee8fe7bde",
+          "correctAnswerIds": [
+            "6101472f-41ca-4355-a920-fa67511e38c1"
+          ],
+          "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "idQuestion": "c1597b7a-b6b6-47d3-86cb-dfffc958feb3"
+        },
+        {
+          "id": "377de8ab-8871-46a2-ad91-e3ef8703c62f",
+          "correctAnswerIds": [
+            "1a636449-bd20-48d7-b520-c33bc3df3550"
+          ],
+          "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "idQuestion": "be48dc5e-ef37-4c58-bed7-c1c83f353bc9"
+        },
+        {
+          "id": "59eaa6a6-9bf6-43ba-9e9a-53ba4076fc20",
+          "correctAnswerIds": [
+            "5051b4bf-5f6e-4300-9a6b-7a197b898cf6"
+          ],
+          "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
+          "idQuestion": "e717340c-242b-4e3a-8ba0-5649637f929d"
+        }
+      ]
     },
-    [
-      {
-        "id": "d5d0fec8-0f5a-4de9-aa0e-7b7c6efc71e6",
-        "correctAnswerIds": [
-          "0809c214-a7e3-48a4-a366-0736bedd174b"
-        ],
-        "idHomework": "cb53d6d8-079e-4140-bad0-50aae836bc5a",
-        "idQuestion": "7066ec7a-de7c-4bd2-88a7-cb6e97db8954"
-      }
-    ],
-    [
-      {
-        "id": "d930340c-5fd5-4a24-adf1-fb4dd8ddf649",
-        "correctAnswerIds": [
-          "599e73d5-5e25-48ea-b2cd-df330133d3d3"
-        ],
-        "idHomework": "19acfd1b-b847-45a8-8046-a8f7867cd8ca",
-        "idQuestion": "ea9c7d9a-778a-469e-a11d-25b157482756"
-      }
-    ],
-    [
-      {
-        "id": "8f7a3a01-6d76-4b9e-9140-fa0b5b8ef394",
-        "correctAnswerIds": [
-          "b6011772-b9ac-4f5e-ac2a-04987f4dc1f2"
-        ],
-        "idHomework": "16fd352d-5784-4aae-bdc5-28d7c079f34b",
-        "idQuestion": "b90f1329-1764-4c83-9d69-c85eba356539"
-      }
-    ],
-    [
-      {
-        "id": "f3c9165f-ab8d-49f5-bdc3-d5f5e1c2d42c",
-        "correctAnswerIds": [
-          "d0d24b1a-751c-442a-aaf8-47f420d92c49"
-        ],
-        "idHomework": "288bf794-6abf-4da4-b0eb-a433575b9708",
-        "idQuestion": "50af71cf-0ea9-49c8-82f3-3f8e4d238c05"
-      }
-    ],
-    [
-      {
-        "id": "1170b5d4-01ee-49aa-9825-0fd2f9d3d7c5",
-        "correctAnswerIds": [],
-        "idHomework": "c85d722d-ac5e-42d6-b464-b47f573d403d",
-        "idQuestion": "126dd421-e314-45b8-b91a-04e450f52a72"
-      }
-    ],
-    [
-      {
-        "id": "cf0b39b7-48dd-41da-bdaf-117c0c9f39c2",
-        "correctAnswerIds": [],
-        "idHomework": "9f30101f-8f29-4a7b-89c0-0de9ba87edca",
-        "idQuestion": "8cecf635-68d8-4f5d-9184-d994eae83194"
-      }
-    ],
-    [
-      {
-        "id": "931e346e-7057-4fe2-9ff0-62a87884517c",
-        "correctAnswerIds": [
-          "d589a23e-30ca-4530-b959-4c641836de7b"
-        ],
-        "idHomework": "75b76ec2-a4c9-4d58-92e5-86d029e309b4",
-        "idQuestion": "6bf2086b-7afc-4cc9-a3bf-e2e5ef562073"
-      }
-    ],
-    [
-      {
-        "id": "07c60be9-aa4f-4f21-b8cf-4196f02a1ec3",
-        "correctAnswerIds": [
-          "ab546c22-c4de-41b5-b406-da5d54a9dad1"
-        ],
-        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-        "idQuestion": "75ce5b10-afcb-4bc8-95b1-6fbb912aa424"
-      },
-      {
-        "id": "fafaf1db-1ce4-427b-8ab9-fac8ad46bc7d",
-        "correctAnswerIds": [
-          "e6e0e009-7cb2-411d-8bb0-e999cd421f8d"
-        ],
-        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-        "idQuestion": "db10d8c1-a510-4e6c-ace2-c99057003b6f"
-      },
-      {
-        "id": "cce73ee3-53a0-472f-9274-179068cadfb2",
-        "correctAnswerIds": [
-          "c50beea1-0213-46be-99a8-17083a5489a3"
-        ],
-        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-        "idQuestion": "aea51acb-6f07-46e5-9ed0-da93d28fe944"
-      },
-      {
-        "id": "9f8e1d1f-236a-40a3-8bc2-ee1ee8fe7bde",
-        "correctAnswerIds": [
-          "6101472f-41ca-4355-a920-fa67511e38c1"
-        ],
-        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-        "idQuestion": "c1597b7a-b6b6-47d3-86cb-dfffc958feb3"
-      },
-      {
-        "id": "377de8ab-8871-46a2-ad91-e3ef8703c62f",
-        "correctAnswerIds": [
-          "1a636449-bd20-48d7-b520-c33bc3df3550"
-        ],
-        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-        "idQuestion": "be48dc5e-ef37-4c58-bed7-c1c83f353bc9"
-      },
-      {
-        "id": "59eaa6a6-9bf6-43ba-9e9a-53ba4076fc20",
-        "correctAnswerIds": [
-          "5051b4bf-5f6e-4300-9a6b-7a197b898cf6"
-        ],
-        "idHomework": "c6f8cd8f-d16e-45e3-8833-89598d3ef8f1",
-        "idQuestion": "e717340c-242b-4e3a-8ba0-5649637f929d"
-      }
-    ]
+    {
+      "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+      "answers": [
+        {
+          "id": "252a9f21-ed98-4c8a-ab68-d20181837676",
+          "correctAnswerIds": [
+            "d06f866e-44c1-4eed-bac6-01170259289d"
+          ],
+          "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+          "idQuestion": "aa516f7d-abef-4c39-b4b3-81336746b250",
+          "allAnswers": 3
+        },
+        {
+          "id": "7bc6270e-1899-4416-87e0-ada837a77eed",
+          "correctAnswerIds": [
+            "3641a3e7-d1f8-441c-9cee-1047982ab353"
+          ],
+          "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+          "idQuestion": "11e50ed6-629b-44d8-86da-dec601c7c19d",
+          "allAnswers": 3
+        },
+        {
+          "id": "edae0073-693b-41fa-a5d8-92ea28c6fd6f",
+          "correctAnswerIds": [
+            "945bd37d-6583-4c80-816a-4a76673b6ad7"
+          ],
+          "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+          "idQuestion": "77c7a966-59c9-4c6e-89c9-74bfba529dff",
+          "allAnswers": 3
+        },
+        {
+          "id": "511367f4-c565-499e-9aed-6606da72a05c",
+          "correctAnswerIds": [
+            "fcb91125-2106-40ab-b4c0-d65034f5b77e"
+          ],
+          "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+          "idQuestion": "883d9ecf-7e9f-4538-9cc7-b0ca00b8d1b0",
+          "allAnswers": 3
+        },
+        {
+          "id": "45f68110-d755-4076-9dce-f6ffdee85d86",
+          "correctAnswerIds": [
+            "0f61bbcd-db55-4cd9-b582-7a4fd4e1a87f"
+          ],
+          "idHomework": "bc5206f4-a22c-4dd1-b3a0-daf7c7987daf",
+          "idQuestion": "ab3ad725-c98a-4a03-8d02-99084109bd0d",
+          "allAnswers": 3
+        }
+      ]
+    }
   ]
 }

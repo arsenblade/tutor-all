@@ -45,7 +45,7 @@ export default function TeacherCard({teacher}: TeacherCardPropsInterface) {
             <div className={styles.priceContainer}>
               <span>за 1 час</span>
               <span className={styles.priceValue}>
-                1600 ₽
+                {teacher.price} ₽
               </span>
             </div>
             <div

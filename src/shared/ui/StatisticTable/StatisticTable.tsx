@@ -3,16 +3,20 @@ import cn from 'classnames';
 import styles from './StatisticTable.module.scss';
 
 interface IStatUser {
-    value: number;
-    isFilled: boolean;
+    idHomework: string,
+    allQuestionLength: number
+    points: number
+    nameHomework: string
+    valuePercent: number
+    index: number
 }
 
 interface IStatistics {
     data: IStatUser[];
     color: 'blue' | 'purple'
     percent: boolean
-    onChange: (value: number) => void,
-    value: number,
+    onChange: (value: IStatUser) => void,
+    value: (IStatUser) | null,
 }
 
 const StatisticsTable:FC<IStatistics> = ({ data, color, percent, value, onChange}) => (
@@ -23,47 +27,31 @@ const StatisticsTable:FC<IStatistics> = ({ data, color, percent, value, onChange
         })}
     >
       {data.map((statData, idx) => {
-                if (statData.isFilled === true) {
-                    return (
-                      <div className={styles.statBar} key={idx}>
-                        <div className={styles.bodyBarContainer} style={{ height: percent === true ? `${statData.value}%` : `${statData.value * 10 * 2}%` }}>
-                          <div
-                            className={cn(styles.bodyBar, {
-                                    [styles.blueBody]: color === 'blue',
-                                    [styles.purpleBody]: color === 'purple',
-                                    [styles.selectedBar]: value === idx + 1,
-                                })}
-                            onClick={() => onChange(idx + 1)}
-                          >
-                            <div className={cn(styles.valueBar, {
-                                        [styles.valueZero]: statData.value === 0,
-                                    })}
-                            >
-                              {percent === true ? `${statData.value}%` : `${statData.value}`}
-                            </div>
-                          </div>
-                          <div className={styles.numberBar}>
-                            #
-                            {idx + 1}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                }
-
-                return (
-                  <div className={cn(styles.statBar, styles.statBarZero)} key={idx}>
-                    <div className={styles.bodyBarContainer}>
-                      <div className={styles.bodyBar}>
-                        <div className={cn(styles.valueBar, styles.valueZero)}>–</div>
-                      </div>
-                      <div className={styles.numberBar}>
-                        #
-                        {idx + 1}
+              return (
+                <div className={styles.statBar} key={idx}>
+                  <div className={styles.bodyBarContainer} style={{ height: percent === true ? `${statData.valuePercent}%` : `${statData.valuePercent * 10 * 2}%` }}>
+                    <div
+                      className={cn(styles.bodyBar, {
+                                  [styles.blueBody]: color === 'blue',
+                                  [styles.purpleBody]: color === 'purple',
+                                  [styles.selectedBar]: value?.idHomework === statData.idHomework,
+                              })}
+                      onClick={() => onChange(statData)}
+                    >
+                      <div className={cn(styles.valueBar, {
+                                  [styles.valueZero]: statData.valuePercent === 0,
+                              })}
+                      >
+                        {percent === true ? `${statData.valuePercent}%` : `${statData.valuePercent}`}
                       </div>
                     </div>
+                    <div className={styles.numberBar}>
+                      #
+                      {idx + 1}
+                    </div>
                   </div>
-                );
+                </div>
+              );
             })}
     </div>
   </div>

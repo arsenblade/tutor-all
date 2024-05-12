@@ -17,6 +17,7 @@ const initialState: IInitialStateFillingTeacher = {
         education: '',
         experience: '',
         photo: '',
+        price: '',
     },
     isLoading: false,
     isLoadingFillingTeacher: false,

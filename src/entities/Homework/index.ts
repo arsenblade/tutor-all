@@ -11,5 +11,6 @@ export {
 export {default as SelectHomework} from './ui/SelectHomework';
 
 export type {IHomework} from './types/Homework.types';
+export type {ICorrectAnswer} from './types/Homework.types';
 
 export {asyncActionHomeworks} from './model/actions';

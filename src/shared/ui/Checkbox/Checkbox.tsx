@@ -6,17 +6,25 @@ interface ICheckbox {
   children?: ReactNode,
   onChange?: (checked: boolean) => void,
   checked?: boolean,
+  disabled?: boolean,
   className?: string
 }
 
 const Checkbox:FC<ICheckbox> = ({
-  children, className, onChange, checked,
+  children, className, onChange, checked, disabled,
 }) => (
   <label className={cn(styles.checkboxLabel, {
     [`${className}`]: className && className,
+    [styles.disabled]: disabled,
   })}
   >
-    <input type="checkbox" onChange={(e) => onChange && onChange(e.currentTarget.checked)} className={styles.checkboxInput} checked={checked} />
+    <input
+      type="checkbox"
+      onChange={(e) => onChange && onChange(e.currentTarget.checked)}
+      className={styles.checkboxInput}
+      checked={checked}
+      disabled={disabled}
+    />
     <span className={styles.fakeCheckbox} />
     <p className={styles.checkboxText}>{children}</p>
   </label>

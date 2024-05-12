@@ -1,5 +1,10 @@
+@import "app/styles/variables";
+
 .doingHomework {
   margin-top: 48px;
+}
+
+.doingHomeworkWrapper {
   padding-left: 120px;
 }
 
@@ -26,4 +31,54 @@
   margin-top: 32px;
   column-gap: 32px;
   row-gap: 16px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.doingHomeworkAction {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  width: 400px;
+}
+
+.doingHomeworkPoints {
+  padding: 16px;
+  border-radius: 10px;
+  background: $purple;
+  text-align: center;
+  font-size: 28px;
+  line-height: 130%;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+.questionItemAnswer {
+  display: flex;
+  align-items: center;
+}
+
+.questionItemCloseIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.questionItemArrow {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.answerCheckbox {
+  & > span {
+    width: 20px;
+    height: 20px;
+  }
 }

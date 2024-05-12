@@ -22,3 +22,16 @@ export interface IStudentHomework {
     name: string,
     lengthQuestions: number
 }
+
+export interface IResponseCorrectAnswers {
+    idHomework: string,
+    answers: ICorrectAnswer[]
+}
+
+export interface ICorrectAnswer {
+    id: string,
+    correctAnswerIds: string[],
+    idHomework: string,
+    idQuestion: string,
+    allAnswers: number
+}

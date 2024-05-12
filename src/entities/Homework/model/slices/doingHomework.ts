@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {asyncActionHomeworks} from '../actions';
 import {IHomework} from '../../types/Homework.types';
 
@@ -23,6 +23,14 @@ export const doingHomeworkSlice = createSlice({
     name: 'doingHomework',
     initialState,
     reducers: {
+        clearHomework(state) {
+            state.homework = {
+                id: '',
+                idTeacher: '',
+                name: '',
+                questions: [],
+            };
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -41,6 +49,6 @@ export const doingHomeworkSlice = createSlice({
 });
 
 export const { reducer } = doingHomeworkSlice;
-export const actionsHomeworks = {
+export const actionsDoingHomeworks = {
     ...doingHomeworkSlice.actions,
 };

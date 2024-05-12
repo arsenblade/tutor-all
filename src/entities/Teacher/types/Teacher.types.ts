@@ -5,4 +5,5 @@ export interface ITeacher {
     photo: string,
     experience: string,
     education: string,
+    price: string
 }

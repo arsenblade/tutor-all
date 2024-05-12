@@ -51,3 +51,7 @@
 .checkboxInput:checked + .fakeCheckbox {
   background-color: $violet;
 }
+
+.disabled {
+  opacity: 0.8;
+}
