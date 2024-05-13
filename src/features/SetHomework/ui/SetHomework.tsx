@@ -46,7 +46,7 @@ export default function SetHomework({}: SetHomeworkPropsInterface) {
                     if (prevState) {
                         return {
                             ...prevState,
-                            homeworksIds: [...selectedStudent.setHomeworks, ...selectedHomeworks],
+                            setHomeworks: [...prevState.setHomeworks, ...selectedHomeworks],
                         };
                     }
 

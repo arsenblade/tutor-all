@@ -11,6 +11,11 @@
   display: flex;
   column-gap: 64px;
   justify-content: center;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    row-gap: 64px;
+  }
 }
 
 .selectHomework {
@@ -27,6 +32,15 @@
     border-bottom: 40px solid transparent;
     border-right: 50px solid $black80;
     transform: rotate(180deg) translate(0, 50%);
+  }
+
+  @media (max-width: 750px) {
+    &::before {
+      top: auto;
+      bottom: -75px;
+      right: 50%;
+      transform: rotate(-90deg) translate(0, 25px);
+    }
   }
 }
 

@@ -6,4 +6,5 @@ export interface IGradeStudents {
     points: number
     nameHomework: string
     valuePercent: number,
+    id: number,
 }

@@ -1,11 +1,11 @@
 import styles from './HomeworkStudent.module.scss';
 import {Link} from 'react-router-dom';
-import {useAppSelector} from '../../../shared/hooks/useAppSelector';
+import {useAppSelector} from 'shared/hooks/useAppSelector';
 import {useEffect} from 'react';
-import {useActionCreatorsTyped} from '../../../shared/hooks/useActionsCreators';
-import {asyncActionHomeworks} from '../../../entities/Homework';
-import {useAuth} from '../../../shared/hooks/useAuth';
-import {pluralizeRu} from '../../../shared/lib/plural';
+import {useActionCreatorsTyped} from 'shared/hooks/useActionsCreators';
+import {asyncActionHomeworks} from 'entities/Homework';
+import {useAuth} from 'shared/hooks/useAuth';
+import {pluralizeRu} from 'shared/lib/plural';
 
 interface HomeworkStudentPropsInterface {
 

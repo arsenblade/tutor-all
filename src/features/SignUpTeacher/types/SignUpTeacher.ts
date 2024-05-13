@@ -3,5 +3,5 @@ export interface ISignUpTeacher {
     idTeacher: string,
     nameStudent: string,
     idStudent: string,
-    homeworksIds: string[]
+    setHomeworks: string[]
 }

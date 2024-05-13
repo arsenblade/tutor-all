@@ -2,8 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import {AxiosError} from 'axios';
 import {axiosPrivate} from 'shared/api/axios';
 import {IGradeStudents} from '../../types/GradeStudents';
-import {IHomework} from 'entities/Homework';
-import {ISignUp} from '../../../../entities/Homework/types/Homework.types';
+import {ISignUp} from 'entities/Homework/types/Homework.types';
 
 const submitHomework = createAsyncThunk<boolean, IGradeStudents, {
     rejectValue: AxiosError,
@@ -29,7 +28,7 @@ const removeFillingHomework = createAsyncThunk<boolean, {idTeacher: string, idSt
         try {
             const response = await axiosPrivate.get<ISignUp[]>(`sign-up?idTeacher${idTeacher}&idStudent=${idStudent}`);
             const data = response.data[0];
-            console.log(data);
+
             const setHomeworks = data.setHomeworks.filter((setHomework) => setHomework.id !== idHomework);
             data.setHomeworks = setHomeworks;
 

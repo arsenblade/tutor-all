@@ -24,7 +24,7 @@ export default function SignUpTeacher({idStudent, nameStudent, idNotification}: 
             nameTeacher: auth.user?.name || '',
             idStudent,
             nameStudent,
-            homeworksIds: [],
+            setHomeworks: [],
         };
         
         asyncActionCreatorsSingUpTeacher.signUpTeacher({...singUp}).then((response) => {

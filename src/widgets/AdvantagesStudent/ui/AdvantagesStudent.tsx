@@ -9,7 +9,7 @@ export default function AdvantagesStudent({}: AdvantagesStudentPropsInterface) {
     return (
       <div className={styles.advantagesTeachers}>
         <h1 className={styles.title}>
-          Все, что тебе нужно для подготовки, <span className={styles.subTitle}>— на одной птлаформе</span>
+          Все, что тебе нужно для подготовки, <span className={styles.subTitle}>— на одной платформе</span>
         </h1>
 
         <section className={styles.advantageCards}>
@@ -23,7 +23,7 @@ export default function AdvantagesStudent({}: AdvantagesStudentPropsInterface) {
 
             <img
               className={styles.image}
-              src="/images/Testing.png"
+              src="/images/all-teachers.png"
               alt=""
             />
           </article>
@@ -38,22 +38,7 @@ export default function AdvantagesStudent({}: AdvantagesStudentPropsInterface) {
 
             <img
               className={styles.image}
-              src="/images/Testing.png"
-              alt=""
-            />
-          </article>
-
-          <article className={styles.advantageCard}>
-            <div className={styles.content}>
-              <h2 className={styles.titleCard}>Обучение в удобное для вас время.</h2>
-              <p className={styles.description}>
-                Ученики могут выбирать удобное время для занятий с учителями, что помогает согласовать обучение с другими обязанностями и занятиями. Гибкость в расписании способствует комфортному и продуктивному процессу обучения.              
-              </p>
-            </div>
-
-            <img
-              className={styles.image}
-              src="/images/Testing.png"
+              src="/images/statistic-student.png"
               alt=""
             />
           </article>
@@ -73,7 +58,7 @@ export default function AdvantagesStudent({}: AdvantagesStudentPropsInterface) {
 
               <img
                 className={styles.imageInfo}
-                src="/images/Testing.png"
+                src="/images/all-platform.png"
                 alt=""
               />
             </article>
@@ -88,7 +73,7 @@ export default function AdvantagesStudent({}: AdvantagesStudentPropsInterface) {
 
               <img
                 className={styles.imageInfo}
-                src="/images/Testing.png"
+                src="/images/student-lessons.png"
                 alt=""
               />
             </article>

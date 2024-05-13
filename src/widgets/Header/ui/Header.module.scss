@@ -100,6 +100,11 @@
   transition: 0.3s;
   opacity: 1;
   visibility: visible;
+
+  @media (max-width: $mobileOnlyWidth) {
+    width: 300px;
+    right: -80px;
+  }
 }
 
 .notificationsModalClose {

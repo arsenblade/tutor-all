@@ -15,6 +15,7 @@ interface IStatisticStudent {
     nameHomework: string
     valuePercent: number,
     index: number,
+    id: number,
 }
 
 export default function StatisticStudent() {
@@ -57,18 +58,20 @@ export default function StatisticStudent() {
           />
         </div>
         {selectedHomework ? (
-          <div className={styles.selectStatistic}>
-            <div className={styles.selectStatisticNumber}>#{selectedHomework.index + 1}</div>
-            <div className={styles.selectStatisticTable}>
-              <div className={styles.selectStatisticColumn}>Название домашней работы</div>
-              <div className={styles.selectStatisticColumn}>Количество баллов</div>
-              <div className={styles.selectStatisticColumn}>Всего вопросов</div>
-              <h3 className={styles.selectStatisticTitle}>{selectedHomework.nameHomework}</h3>
-              <div className={styles.selectStatisticPoints}>{selectedHomework.points}</div>
-              <div className={styles.selectStatisticPoints}>{selectedHomework.allQuestionLength}</div>
+          <div className={styles.containerSelectedStatistic}>
+            <div className={styles.selectStatistic}>
+              <div className={styles.selectStatisticNumber}>#{selectedHomework.index + 1}</div>
+              <div className={styles.selectStatisticTable}>
+                <div className={styles.selectStatisticColumn}>Название домашней работы</div>
+                <div className={styles.selectStatisticColumn}>Количество баллов</div>
+                <div className={styles.selectStatisticColumn}>Всего вопросов</div>
+                <h3 className={styles.selectStatisticTitle}>{selectedHomework.nameHomework}</h3>
+                <div className={styles.selectStatisticPoints}>{selectedHomework.points}</div>
+                <div className={styles.selectStatisticPoints}>{selectedHomework.allQuestionLength}</div>
+              </div>
             </div>
           </div>
-          ) : null}
+        ) : null}
       </div>
     );
 }

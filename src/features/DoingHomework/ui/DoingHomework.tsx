@@ -131,7 +131,7 @@ export default function DoingHomework() {
         const correctAnswers = response.payload as ICorrectAnswer[];
 
         const points = userSelectedAnswers.reduce((prevPoints, userCorrectAnswer) => {
-            const needCorrectAnswer = correctAnswers.find((correctAnswer) => correctAnswer.idQuestion === userCorrectAnswer.idQuestion);
+            const needCorrectAnswer = correctAnswers?.find((correctAnswer) => correctAnswer.idQuestion === userCorrectAnswer.idQuestion);
 
             if (needCorrectAnswer) {
                 const grade = checkCorrectAnswer(needCorrectAnswer.correctAnswerIds, userCorrectAnswer.idsAnswer, needCorrectAnswer.allAnswers);
@@ -161,7 +161,6 @@ export default function DoingHomework() {
         setIsSubmit(true);
         setPoints(points);
     };
-
     const backToHomework = () => {
         navigate('/homework');
     };

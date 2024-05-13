@@ -50,11 +50,12 @@ const createHomework = createAsyncThunk<boolean, ICreateHomework, {
             Promise.all([
                 await axiosPrivate.post('/homeworks/', createHomework),
                 await axiosPrivate.post('/correct-answers/', {
-                    idHomework: homework.id,
+                    id: uuid.v4(),
+                    idHomework: homework?.id,
                     answers: correctAnswers,
                 }),
             ]).then((responses) => {
-                console.log(responses);
+
             });
 
             return true;

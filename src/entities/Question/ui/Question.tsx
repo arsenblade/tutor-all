@@ -4,7 +4,6 @@ import {IQuestion} from '../types/Question.types';
 import {ActionCreatorWithPayload} from '@reduxjs/toolkit';
 import Button from 'shared/ui/Button/Button';
 import AnswerItem from './components/AnswerItem';
-import SwitchTab from 'shared/ui/SwitchTab/SwitchTab';
 import styles from './Question.module.scss';
 
 const tabs = [

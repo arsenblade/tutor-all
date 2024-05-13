@@ -14,15 +14,17 @@ export default function Profile({}: ProfilePropsInterface) {
         <div className={styles.profile}>
           <h1 className={styles.title}>Мой профиль</h1>
 
-          <div className={styles.profileMyPage}>
-            <LinkPanel
-              imgPath="/images/teacher@2x.jpg"
-              link="/profile/create-teacher"
-              title="Тимофеева Анастасия"
-              description="Моя страница"
-              isBorderImg
-            />
-          </div>
+          {auth?.user?.roles.includes('teacher') ? (
+            <div className={styles.profileMyPage}>
+              <LinkPanel
+                imgPath="/images/teacher@2x.jpg"
+                link="/profile/create-teacher"
+                title="Тимофеева Анастасия"
+                description="Моя страница"
+                isBorderImg
+              />
+            </div>
+            ) : null}
 
           {auth?.user?.roles.includes('teacher') ? (
             <div className={styles.profileMyPage}>

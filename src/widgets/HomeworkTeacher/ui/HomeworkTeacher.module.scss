@@ -11,6 +11,11 @@
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   column-gap: 16px;
+
+  @media (max-width: $tabletWidth) {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
 }
 
 .createHomework {
@@ -30,6 +35,13 @@
   &:hover {
     background-color: rgba($purple, 0.2);
   }
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 20px;
+    padding: 24px;
+    text-align: center;
+    height: 120px;
+  }
 }
 
 .setHomework {
@@ -48,5 +60,12 @@
 
   &:hover {
     background-color: rgba($green, 0.2);
+  }
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 20px;
+    padding: 24px;
+    text-align: center;
+    height: 120px;
   }
 }

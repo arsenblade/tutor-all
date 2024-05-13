@@ -9,6 +9,7 @@ interface IStatUser {
     nameHomework: string
     valuePercent: number
     index: number
+    id: number,
 }
 
 interface IStatistics {
@@ -34,7 +35,7 @@ const StatisticsTable:FC<IStatistics> = ({ data, color, percent, value, onChange
                       className={cn(styles.bodyBar, {
                                   [styles.blueBody]: color === 'blue',
                                   [styles.purpleBody]: color === 'purple',
-                                  [styles.selectedBar]: value?.idHomework === statData.idHomework,
+                                  [styles.selectedBar]: value?.id === statData.id,
                               })}
                       onClick={() => onChange(statData)}
                     >

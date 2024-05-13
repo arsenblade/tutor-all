@@ -42,6 +42,7 @@
   margin-left: 0.5em;
   vertical-align: middle;
   color: $beige;
+  flex: 1;
 }
 
 .checkboxInput:checked + .fakeCheckbox::before {
@@ -53,5 +54,5 @@
 }
 
 .disabled {
-  opacity: 0.8;
+  opacity: 0.6;
 }
