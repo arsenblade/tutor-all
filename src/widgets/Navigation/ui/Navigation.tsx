@@ -1,13 +1,9 @@
 import styles from './Navigation.module.scss';
 import {Link, useLocation} from 'react-router-dom';
 import classNames from 'classnames';
-import {useAuth} from '../../../shared/hooks/useAuth';
+import {useAuth} from 'shared/hooks/useAuth';
 
-interface NavigationPropsInterface {
-
-}
-
-export default function Navigation({}: NavigationPropsInterface) {
+export default function Navigation() {
     const {pathname} = useLocation();
     const {user} = useAuth();
 

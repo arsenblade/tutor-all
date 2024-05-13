@@ -1,11 +1,7 @@
 import styles from './HomeworkTeacher.module.scss';
 import {Link} from 'react-router-dom';
 
-interface HomeworkTeacherPropsInterface {
-
-}
-
-export default function HomeworkTeacher({}: HomeworkTeacherPropsInterface) {
+export default function HomeworkTeacher() {
     return (
       <div className={styles.homeworkTeacher}>
         <Link

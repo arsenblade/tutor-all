@@ -7,11 +7,7 @@ import {asyncActionHomeworks} from 'entities/Homework';
 import {useAuth} from 'shared/hooks/useAuth';
 import {pluralizeRu} from 'shared/lib/plural';
 
-interface HomeworkStudentPropsInterface {
-
-}
-
-export default function HomeworkStudent({}: HomeworkStudentPropsInterface) {
+export default function HomeworkStudent() {
     const {homeworks} = useAppSelector((state) => state.studentHomeworkSlice);
     const asyncActionCreatorsHomeworks = useActionCreatorsTyped(asyncActionHomeworks);
     const auth = useAuth();

@@ -7,11 +7,7 @@ import {useAppSelector} from 'shared/hooks/useAppSelector';
 import {useEffect, useRef, useState} from 'react';
 import {useAuth} from 'shared/hooks/useAuth';
 
-interface SetHomeworkPropsInterface {
-
-}
-
-export default function SetHomework({}: SetHomeworkPropsInterface) {
+export default function SetHomework() {
     const auth = useAuth();
 
     const asyncActionCreatorsStudents = useActionCreatorsTyped(asyncActionStudents);

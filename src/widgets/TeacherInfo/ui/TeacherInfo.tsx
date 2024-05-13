@@ -10,11 +10,7 @@ import {useParams} from 'react-router';
 import {useAuth} from 'shared/hooks/useAuth';
 import {SendNotificationSingUp} from 'features/SendNotificationSingUp';
 
-interface TeacherPropsInterface {
-
-}
-
-export default function TeacherInfo({}: TeacherPropsInterface) {
+export default function TeacherInfo() {
     const asyncActionCreatorsTeacher = useActionCreatorsTyped(asyncActionTeacher);
 
     const [teacher, setTeacher] = useState<ITeacher | null>(null);

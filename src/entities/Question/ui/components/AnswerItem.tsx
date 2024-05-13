@@ -40,7 +40,10 @@ function AnswerItem({answer, indexAnswer, onChange, onChangeCorrectAnswer, onCli
           checked={answer.isCorrect}
         />
         {indexAnswer > 1 ? (
-          <button className={styles.answerRemove} onClick={handleClickRemoveAnswer}>
+          <button
+            className={styles.answerRemove}
+            onClick={handleClickRemoveAnswer}
+          >
             <svg
               className={styles.answerIconRemove}
               xmlns="http://www.w3.org/2000/svg"

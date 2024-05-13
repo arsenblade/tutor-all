@@ -2,11 +2,7 @@ import {Link} from 'react-router-dom';
 import styles from './Footer.module.scss';
 import {ReactComponent as Logo} from 'assets/svg/logo.svg';
 
-interface FooterPropsInterface {
-
-}
-
-export default function Footer({}: FooterPropsInterface) {
+export default function Footer() {
     return (
       <footer className={styles.footer}>
         <div className={styles.footerWrapper}>

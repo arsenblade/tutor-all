@@ -2,11 +2,7 @@ import LinkPanel from 'shared/ui/LinkPanel/LinkPanel';
 import styles from './Profile.module.scss';
 import {useAuth} from 'shared/hooks/useAuth';
 
-interface ProfilePropsInterface {
-
-}
-
-export default function Profile({}: ProfilePropsInterface) {
+export default function Profile() {
     const auth = useAuth();
 
     return (

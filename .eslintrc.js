@@ -58,6 +58,8 @@ module.exports = {
     'object-curly-newline': 'off',
     'no-trailing-spaces': 'off',
     'react/js-indent': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
+    'consistent-return': 'off',
     indent: 'off',
     'max-len': ['warn', { ignoreComments: true, code: 120 }],
   },

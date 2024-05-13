@@ -10,11 +10,7 @@ import {useAuth} from 'shared/hooks/useAuth';
 import styles from './CreateHomework.module.scss';
 import {useNavigate} from 'react-router-dom';
 
-interface CreateHomeworkPropsInterface {
-
-}
-
-export default function CreateHomework({}: CreateHomeworkPropsInterface) {
+export default function CreateHomework() {
     const homework = useAppSelector((state) => state.createHomeworkReducer.homework);
     const actionsHomework = useActionCreatorsTyped(actionsCreateHomework);
     const actionsAsyncHomework = useActionCreatorsTyped(asyncActionCreateHomework);

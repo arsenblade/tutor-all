@@ -1,7 +1,7 @@
 import styles from '../DoingHomework.module.scss';
 import {IQuestion} from 'entities/Question';
 import AnswerItem from './Answer';
-import {Fragment, useEffect} from 'react';
+import {Fragment} from 'react';
 
 interface IQuestionItem {
     question: IQuestion
@@ -20,7 +20,7 @@ export default function QuestionItem({question, index, onChange, isColumn, corre
           {question.answers.map((answer) => (
             <div className={styles.questionItemAnswer}>
               {isSubmit ? (
-                <>
+                <div>
                   {!correctAnswersIds.includes(answer.id) ? (
                     <svg
                       className={styles.questionItemCloseIcon}
@@ -49,7 +49,7 @@ export default function QuestionItem({question, index, onChange, isColumn, corre
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     )}
-                </>
+                </div>
               ) : null}
               <AnswerItem
                 answer={answer}

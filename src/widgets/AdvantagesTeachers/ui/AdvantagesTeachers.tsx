@@ -1,11 +1,7 @@
 import styles from './AdvantagesTeachers.module.scss';
 import classNames from 'classnames';
 
-interface AdvantagesTeachersPropsInterface {
-
-}
-
-export default function AdvantagesTeachers({}: AdvantagesTeachersPropsInterface) {
+export default function AdvantagesTeachers() {
     return (
       <div className={styles.advantagesTeachers}>
         <h1 className={styles.title}>
