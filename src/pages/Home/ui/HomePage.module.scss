@@ -55,3 +55,15 @@
     font-size: 36px;
   }
 }
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  font-size: 32px;
+  border: 0.3em solid #000000;
+  border-bottom-color: transparent;
+  margin-top: 32px;
+}

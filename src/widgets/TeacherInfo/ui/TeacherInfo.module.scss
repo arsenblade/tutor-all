@@ -115,3 +115,12 @@
     row-gap: 8px;
   }
 }
+
+.containerLoader {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  font-size: 40px;
+}

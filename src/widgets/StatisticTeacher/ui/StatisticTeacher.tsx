@@ -97,54 +97,67 @@ export default function StatisticTeacher() {
       <div className={styles.statisticTeacher}>
         <h1 className={styles.title}>Статистика ваших учеников</h1>
 
-        <div className={styles.studentList}>
-          {students.map((student) => (
-            <button
-              className={classNames(styles.studentItem, {
-                  [styles.studentItemActive]: selectedStudent?.idStudent === student.idStudent,
-              })}
-              key={student.id}
-              onClick={() => handleChangeStudent(student)}
-            >
-              {student.nameStudent}
-            </button>
-            ))}
-        </div>
-
-        {isLoadingStatStudent ? (
+        {isLoadingStudent ? (
           <div className={styles.loaderStatistic}>
             <Loader />
           </div>
           ) : null}
 
-        {!isLoadingStatStudent ? (
-          <>
-            <div className={styles.statisticTable}>
-              <StatisticsTable
-                data={statisticsStudent}
-                color="purple"
-                percent
-                value={selectedHomework}
-                onChange={handleChangeHomework}
-              />
+        {!isLoadingStudent ? (
+          <div>
+            <div className={styles.studentList}>
+              {students.map((student) => (
+                <button
+                  className={classNames(styles.studentItem, {
+                                  [styles.studentItemActive]: selectedStudent?.idStudent === student.idStudent,
+                              })}
+                  key={student.id}
+                  onClick={() => handleChangeStudent(student)}
+                >
+                  {student.nameStudent}
+                </button>
+                      ))}
             </div>
-            {selectedHomework ? (
-              <div className={styles.containerSelectedStatistic}>
-                <div className={styles.selectStatistic}>
-                  <div className={styles.selectStatisticNumber}>#{selectedHomework.index + 1}</div>
-                  <div className={styles.selectStatisticTable}>
-                    <div className={styles.selectStatisticColumn}>Название домашней работы</div>
-                    <div className={styles.selectStatisticColumn}>Количество баллов</div>
-                    <div className={styles.selectStatisticColumn}>Всего вопросов</div>
-                    <h3 className={styles.selectStatisticTitle}>{selectedHomework.nameHomework}</h3>
-                    <div className={styles.selectStatisticPoints}>{selectedHomework.points}</div>
-                    <div className={styles.selectStatisticPoints}>{selectedHomework.allQuestionLength}</div>
-                  </div>
-                </div>
+
+            {isLoadingStatStudent ? (
+              <div className={styles.loaderStatistic}>
+                <Loader />
               </div>
-            ) : null}
-          </>
-        ) : null}
+                  ) : null}
+
+            {!isLoadingStatStudent ? (
+              <>
+                <div className={styles.statisticTable}>
+                  <StatisticsTable
+                    data={statisticsStudent}
+                    color="purple"
+                    percent
+                    value={selectedHomework}
+                    onChange={handleChangeHomework}
+                  />
+                </div>
+                {selectedHomework ? (
+                  <div className={styles.containerSelectedStatistic}>
+                    <div className={styles.selectStatistic}>
+                      <div className={styles.selectStatisticNumber}>#{selectedHomework.index + 1}</div>
+                      <div className={styles.selectStatisticTable}>
+                        <div className={styles.selectStatisticColumn}>Название домашней работы</div>
+                        <div className={styles.selectStatisticColumn}>Количество баллов</div>
+                        <div className={styles.selectStatisticColumn}>Всего вопросов</div>
+                        <h3 className={styles.selectStatisticTitle}>{selectedHomework.nameHomework}</h3>
+                        <div className={styles.selectStatisticPoints}>{selectedHomework.points}</div>
+                        <div
+                          className={styles.selectStatisticPoints}
+                        >{selectedHomework.allQuestionLength}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                          ) : null}
+              </>
+                  ) : null}
+          </div>
+          ) : null}
       </div>
     );
 }

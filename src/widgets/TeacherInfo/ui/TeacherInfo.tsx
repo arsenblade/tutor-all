@@ -9,6 +9,7 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router';
 import {useAuth} from 'shared/hooks/useAuth';
 import {SendNotificationSingUp} from 'features/SendNotificationSingUp';
+import Loader from '../../../shared/ui/Loader/Loader';
 
 export default function TeacherInfo() {
     const asyncActionCreatorsTeacher = useActionCreatorsTyped(asyncActionTeacher);
@@ -75,6 +76,12 @@ export default function TeacherInfo() {
               </div>
             </div>
           </>
+          ) : null}
+
+        {isLoading ? (
+          <div className={styles.containerLoader}>
+            <Loader className={styles.loader} />
+          </div>
           ) : null}
       </div>
     );

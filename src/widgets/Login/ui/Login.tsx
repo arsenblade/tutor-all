@@ -12,21 +12,38 @@ export default function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorText, setErrorText] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      actionsAuth.login({email, password}).then(() => {
-          navigate('/');
+      setIsLoading(true);
+      actionsAuth.login({email, password}).then((response) => {
+          // @ts-ignore
+          const errorText = response.payload?.response?.data?.message;
+
+          if (errorText) {
+              setErrorText('Пользователь не найден');
+          } else {
+              navigate('/');
+          }
+      }).finally(() => {
+          setIsLoading(false);
       });
   }, [email, password]);
 
   return (
-    <form className={styles.login} onSubmit={handleSubmit}>
+    <form className={styles.login} onSubmit={handleSubmit} onClick={() => setErrorText('')}>
       <h1 className={styles.title}>
         Авторизация
       </h1>
+
+      {errorText ? (
+        <div className={styles.errorText}>
+          {errorText}
+        </div>
+        ) : null}
 
       <CustomInput
         type="email"
@@ -44,7 +61,7 @@ export default function Login() {
       />
 
       <div className={styles.containerButton}>
-        <Button color="Violet">
+        <Button color="Violet" isLoading={isLoading}>
           Войти
         </Button>
 

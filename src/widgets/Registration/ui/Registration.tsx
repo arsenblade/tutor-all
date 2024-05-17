@@ -31,13 +31,35 @@ export default function Registration() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [forgotPassword, setForgotPassword] = useState('');
+    const [errorText, setErrorText] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
     const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        actionsAuth.registration({email, password, name, roles: [typeUser.value], avatar: '', notificationNumbers: 0}).then(() => {
-            navigate('/');
+
+        if (password.length < 6) {
+            setErrorText('Пароль не меньше 6 символов');
+            return;
+        }
+
+        if (password !== forgotPassword) {
+            setErrorText('Пароли не совпадают');
+            return;
+        }
+        setIsLoading(true);
+        actionsAuth.registration({email, password, name, roles: [typeUser.value], avatar: '', notificationNumbers: 0}).then((response) => {
+            // @ts-ignore
+            const errorText = response.payload?.response?.data?.message;
+
+            if (errorText) {
+                setErrorText(errorText);
+            } else {
+                navigate('/');
+            }
+        }).finally(() => {
+            setIsLoading(false);
         });
     }, [email, password]);
 
@@ -46,10 +68,16 @@ export default function Registration() {
   }, []);
 
   return (
-    <form className={styles.register} onSubmit={handleSubmit}>
+    <form className={styles.register} onSubmit={handleSubmit} onClick={() => setErrorText('')}>
       <h1 className={styles.title}>
         Регистрация
       </h1>
+
+      {errorText ? (
+        <div className={styles.errorText}>
+          {errorText}
+        </div>
+        ) : null}
 
       <Select
         items={USER_TYPES}
@@ -90,7 +118,7 @@ export default function Registration() {
       />
 
       <div className={styles.containerButton}>
-        <Button color="Violet">
+        <Button color="Violet" isLoading={isLoading}>
           Зарегистрироваться
         </Button>
 

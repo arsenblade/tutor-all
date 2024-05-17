@@ -105,5 +105,7 @@
 }
 
 .containerSelectedStatistic {
-  overflow: scroll;
+  @media (max-width: 1010px) {
+    overflow: scroll;
+  }
 }

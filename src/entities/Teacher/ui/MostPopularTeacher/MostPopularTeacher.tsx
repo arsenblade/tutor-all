@@ -4,9 +4,12 @@ import Status from 'shared/ui/Status/Status';
 
 interface MostPopularTeacherPropsInterface {
     image: string,
+    name: string
+    description: string
+    link: string
 }
 
-export default function MostPopularTeacher({image}: MostPopularTeacherPropsInterface) {
+export default function MostPopularTeacher({image, name, description, link}: MostPopularTeacherPropsInterface) {
     return (
       <article className={styles.mostPopularTeacher}>
         <div
@@ -28,11 +31,11 @@ export default function MostPopularTeacher({image}: MostPopularTeacherPropsInter
             alt="Фото автора."
           />
         </div>
-        <h3 className={styles.title}>Диана Асадова</h3>
-        <p className={styles.description}>Привет! Меня зовут Диана Асадова, и я — твой проводник в прекрасный мир истории. Профессионально конвертирую мемы про Петра III в баллы на ЕГЭ.</p>
+        <h3 className={styles.title}>{name}</h3>
+        <p className={styles.description}>{description}</p>
         <Link
           className={styles.link}
-          to="/"
+          to={link}
         >
           подробнее
         </Link>
