@@ -23,6 +23,7 @@ export default function SwitchTab({tabs, activeTab, onChange}: SwitchTabPropsInt
             className={classNames(styles.tab, {
                   [styles.activeTab]: activeTab === tab.value,
               })}
+            key={tab.name}
           >
             {tab.name}
           </button>

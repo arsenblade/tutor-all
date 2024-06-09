@@ -59,6 +59,7 @@ export default function HomePage() {
             <div className={styles.popularTeacherList}>
               {teachers.map((teacher) => (
                 <MostPopularTeacher
+                  key={teacher.id}
                   image={teacher.photo}
                   name={teacher.name}
                   description={teacher.description}
