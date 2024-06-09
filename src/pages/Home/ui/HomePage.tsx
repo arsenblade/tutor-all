@@ -7,6 +7,7 @@ import {asyncActionTeacher, MostPopularTeacher} from 'entities/Teacher';
 import {useActionCreatorsTyped} from '../../../shared/hooks/useActionsCreators';
 import {useAppSelector} from '../../../shared/hooks/useAppSelector';
 import Loader from '../../../shared/ui/Loader/Loader';
+import InstallPWAButton from './TestButton';
 
 const tabs = [
     {
@@ -40,7 +41,7 @@ export default function HomePage() {
           onChange={handleChangeTab}
           activeTab={activeTab}
         />
-
+        <InstallPWAButton />
         {activeTab === 'student' ? (
           <AdvantagesStudent />
             ) : null}

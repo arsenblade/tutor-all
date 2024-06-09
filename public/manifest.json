@@ -7,7 +7,7 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "Rus Learn",
-  "start_url": "https://test-rus-learn.vercel.app/",
+  "start_url": "https://test-rus-learn2.vercel.app/",
   "theme_color": "#000000",
   "icons": [
     {
@@ -35,7 +35,8 @@
     {
       "src": "/logo128x128.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "128x128",
+      "purpose": "maskable"
     },
     {
       "src": "/logo256x256.png",
