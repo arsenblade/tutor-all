@@ -12,7 +12,6 @@ type Config = {
 export function register(config?: Config) {
     if ('serviceWorker' in navigator) {
         const publicUrl = new URL(window.location.href);
-        console.log(publicUrl);
         if (publicUrl.origin !== window.location.origin) {
             return;
         }

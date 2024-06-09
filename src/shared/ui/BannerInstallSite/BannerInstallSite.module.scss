@@ -1,0 +1,89 @@
+@import "app/styles/variables";
+
+.installBanner {
+  display: flex;
+  align-items: center;
+  animation: slideDown 0.5s ease-out;
+  color: #FFFFFF;
+  background: $black60;
+  height: 60px;
+  overflow: hidden;
+}
+
+.installContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+  transition: 0.3s;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+
+  @media (max-width: $mobileOnlyWidth) {
+    justify-content: flex-start;
+  }
+}
+
+.installWrapper {
+  display: flex;
+  column-gap: 10px;
+}
+
+.installClose {
+  position: absolute;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+
+  & > svg {
+    fill: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      fill: red;
+    }
+  }
+}
+
+.installTitle {
+  font-size: 18px;
+  line-height: 130%;
+  margin: 0;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.installButton {
+  color: #FFFFFF;
+  background: $purple;
+  border: none;
+  padding: 1px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+
+  @media (max-width: $mobileOnlyWidth) {
+    font-size: 14px;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 60px;
+  }
+}
