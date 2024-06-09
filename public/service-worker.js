@@ -2,21 +2,26 @@ const CACHE_NAME = 'my-app-cache-v1';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/static/js/bundle.js',
-    '/static/js/1.chunk.js',
-    '/static/js/main.chunk.js',
-    '/static/css/main.css',
     '/manifest.json',
     '/favicon.ico',
-    '/logo192.png',
-    '/logo512.png',
+    '/logo32x32.png',
+    '/logo64x64.png',
+    '/logo256x256.png',
+    '/logo528x528.png',
+    '/logo128x128.png',
 ];
 
-// Установка service worker и кэширование всех статических ресурсов
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(urlsToCache);
+            return cache.addAll(urlsToCache)
+                .then(() => {
+                    // Кэшируем все файлы сгенерированные сборкой
+                    return self.skipWaiting();
+                })
+                .catch((error) => {
+                    console.error('Failed to cache resources during install:', error);
+                });
         }),
     );
 });
@@ -35,13 +40,26 @@ self.addEventListener('activate', (event) => {
             );
         }),
     );
+    return self.clients.claim();
 });
 
 // Обработка запросов, если ресурс найден в кэше, возвращаем его, иначе делаем запрос к сети
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
+            if (response) {
+                return response;
+            }
+            return fetch(event.request).then((response) => {
+                if (!response || response.status !== 200 || response.type !== 'basic') {
+                    return response;
+                }
+                const responseToCache = response.clone();
+                caches.open(CACHE_NAME).then((cache) => {
+                    cache.put(event.request, responseToCache);
+                });
+                return response;
+            });
         }),
     );
 });
