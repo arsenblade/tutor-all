@@ -7,7 +7,7 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "Rus Learn",
-  "start_url": "https://test-rus-learn2.vercel.app/",
+  "start_url": "/",
   "theme_color": "#000000",
   "icons": [
     {

@@ -44,7 +44,7 @@ const InstallPWAButton: React.FC = () => {
     }
 
     return (
-      <button onClick={handleInstallClick}>
+      <button style={{color: '#ffffff'}} onClick={handleInstallClick}>
         Скачать приложение
       </button>
     );
