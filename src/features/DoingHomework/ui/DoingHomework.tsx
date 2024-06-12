@@ -89,11 +89,51 @@ export default function DoingHomework() {
         }
     };
 
-    const handleChangeCorrectAnswer = (idQuestion: string, idAnswer: string, checked: boolean) => {
-        if (checked) {
-            addSelectedAnswers(idQuestion, idAnswer);
+    const handleChangeCorrectAnswer = (idQuestion: string, idAnswer: string, checked: boolean, type: string) => {
+        if (type === 'radio') {
+            const isUserSelectedAnswers = userSelectedAnswers.find((userSelectedAnswer) => userSelectedAnswer.idQuestion === idQuestion);
+
+            if (!isUserSelectedAnswers) {
+                setUserSelectedAnswers((prevState) => {
+                    return [...prevState, {idQuestion, idsAnswer: [idAnswer]}];
+                });
+            } else {
+                setUserSelectedAnswers((prevState) => prevState.map((correctAnswer) => {
+                    if (correctAnswer.idQuestion === idQuestion) {
+                        return {
+                            idQuestion: correctAnswer.idQuestion,
+                            idsAnswer: [idAnswer],
+                        };
+                    }
+
+                    return correctAnswer;
+                }));
+            }
+        } else if (checked) {
+                addSelectedAnswers(idQuestion, idAnswer);
+            } else {
+                deleteSelectedAnswers(idQuestion, idAnswer);
+            }
+    };
+
+    const handleChangeCorrectAnswerText = (idQuestion: string, textAnswer: string) => {
+        const isUserSelectedAnswers = userSelectedAnswers.find((userSelectedAnswer) => userSelectedAnswer.idQuestion === idQuestion);
+
+        if (!isUserSelectedAnswers) {
+            setUserSelectedAnswers((prevState) => {
+                return [...prevState, {idQuestion, idsAnswer: [textAnswer]}];
+            });
         } else {
-            deleteSelectedAnswers(idQuestion, idAnswer);
+            setUserSelectedAnswers((prevState) => prevState.map((correctAnswer) => {
+                if (correctAnswer.idQuestion === idQuestion) {
+                    return {
+                        idQuestion: correctAnswer.idQuestion,
+                        idsAnswer: [textAnswer],
+                    };
+                }
+
+                return correctAnswer;
+            }));
         }
     };
 
@@ -134,9 +174,20 @@ export default function DoingHomework() {
             const needCorrectAnswer = correctAnswers?.find((correctAnswer) => correctAnswer.idQuestion === userCorrectAnswer.idQuestion);
 
             if (needCorrectAnswer) {
-                const grade = checkCorrectAnswer(needCorrectAnswer.correctAnswerIds, userCorrectAnswer.idsAnswer, needCorrectAnswer.allAnswers);
+                const currentQuestion = homework.questions.find((question) => question.id === needCorrectAnswer.idQuestion);
 
-                return prevPoints + grade;
+                if (currentQuestion?.type === 'text') {
+                    let point = prevPoints;
+                    needCorrectAnswer.correctAnswerIds.forEach((correctAnswerId) => {
+                        if (correctAnswerId === userCorrectAnswer.idsAnswer[0]) {
+                            point = prevPoints + 1;
+                        }
+                    });
+                    return point;
+                } 
+                    const grade = checkCorrectAnswer(needCorrectAnswer.correctAnswerIds, userCorrectAnswer.idsAnswer, needCorrectAnswer.allAnswers);
+
+                    return prevPoints + grade;
             }
 
             return prevPoints;
@@ -188,6 +239,7 @@ export default function DoingHomework() {
                   index={index + 1}
                   isColumn={isColumn}
                   onChange={handleChangeCorrectAnswer}
+                  onChangeText={handleChangeCorrectAnswerText}
                   isSubmit={isSubmit}
                   correctAnswersIds={correctAnswersIds}
                 />

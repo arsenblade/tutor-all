@@ -4,9 +4,9 @@ import {AdvantagesStudent} from 'widgets/AdvantagesStudent';
 import SwitchTab from 'shared/ui/SwitchTab/SwitchTab';
 import {useEffect, useState} from 'react';
 import {asyncActionTeacher, MostPopularTeacher} from 'entities/Teacher';
-import {useActionCreatorsTyped} from '../../../shared/hooks/useActionsCreators';
-import {useAppSelector} from '../../../shared/hooks/useAppSelector';
-import Loader from '../../../shared/ui/Loader/Loader';
+import {useActionCreatorsTyped} from 'shared/hooks/useActionsCreators';
+import {useAppSelector} from 'shared/hooks/useAppSelector';
+import Loader from 'shared/ui/Loader/Loader';
 
 const tabs = [
     {

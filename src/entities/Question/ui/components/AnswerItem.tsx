@@ -3,16 +3,19 @@ import {ChangeEvent, memo} from 'react';
 import {IAnswer} from '../../types/Answer.types';
 import Checkbox from 'shared/ui/Checkbox/Checkbox';
 import styles from '../Question.module.scss';
+import Radio from 'shared/ui/Radio/Radio';
 
 interface AnswerItemPropsInterface {
     answer: IAnswer,
+    idQuestion: string,
+    activeTab: string,
     indexAnswer: number
     onChange: (textAnswer: string, idAnswer: string) => void
     onChangeCorrectAnswer: (isCorrect: boolean, idAnswer: string) => void
     onClickRemoveAnswer: (indexAnswer: number) => void
 }
 
-function AnswerItem({answer, indexAnswer, onChange, onChangeCorrectAnswer, onClickRemoveAnswer}: AnswerItemPropsInterface) {
+function AnswerItem({answer, indexAnswer, idQuestion, activeTab, onChange, onChangeCorrectAnswer, onClickRemoveAnswer}: AnswerItemPropsInterface) {
     const handleChangeAnswer = (event: ChangeEvent<HTMLInputElement>) => {
         onChange(event.target.value, answer.id);
     };
@@ -29,16 +32,27 @@ function AnswerItem({answer, indexAnswer, onChange, onChangeCorrectAnswer, onCli
       <div className={styles.answerItem}>
         <CustomInput
           className={styles.answerField}
+          value={answer.text}
           key={answer.id}
           type="text"
           placeholder="Введите текст ответа"
           onChange={handleChangeAnswer}
         />
-        <Checkbox
-          className={styles.answerCheckbox}
-          onChange={handleChangeCorrectAnswer}
-          checked={answer.isCorrect}
-        />
+        {activeTab === 'radio' ? (
+          <Radio
+            className={styles.answerCheckbox}
+            onChange={handleChangeCorrectAnswer}
+            checked={answer.isCorrect}
+            type={idQuestion}
+          />
+          ) : null}
+        {activeTab === 'checkbox' ? (
+          <Checkbox
+            className={styles.answerCheckbox}
+            onChange={handleChangeCorrectAnswer}
+            checked={answer.isCorrect}
+          />
+          ) : null}
         {indexAnswer > 1 ? (
           <button
             className={styles.answerRemove}

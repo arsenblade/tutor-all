@@ -20,8 +20,12 @@ const createHomework = createAsyncThunk<boolean, ICreateHomework, {
                 questions: homework.questions.map((question) => {
                     const correctAnswersIds: string[] = [];
                     const answers = question.answers.map((answer) => {
-                        if (answer.isCorrect) {
+                        if (question.type !== 'text' && answer.isCorrect) {
                             correctAnswersIds.push(answer.id);
+                        }
+
+                        if (question.type === 'text') {
+                            correctAnswersIds.push(answer.text);
                         }
 
                         return {

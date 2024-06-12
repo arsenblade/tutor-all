@@ -21,7 +21,6 @@ const AppRouter = () => {
 
       if (routeSplit.length && routeSplit[2] === 'doing') {
         actionsCreatorsDoingHomeworks.clearHomework();
-        console.log(routeSplit);
       }
 
       if (prevRoute.current === '/homework/create') {

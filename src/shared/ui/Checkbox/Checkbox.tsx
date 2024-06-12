@@ -26,7 +26,9 @@ const Checkbox:FC<ICheckbox> = ({
       disabled={disabled}
     />
     <span className={styles.fakeCheckbox} />
-    <p className={styles.checkboxText}>{children}</p>
+    {children ? (
+      <p className={styles.checkboxText}>{children}</p>
+    ) : null}
   </label>
 );
 

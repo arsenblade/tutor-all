@@ -2,7 +2,7 @@ import CustomInput from 'shared/ui/CustomInput/CustomInput';
 import Button from 'shared/ui/Button/Button';
 import {useActionCreatorsTyped} from 'shared/hooks/useActionsCreators';
 import {actionsCreateHomework} from '../model/slices';
-import {ChangeEvent, useCallback, useRef} from 'react';
+import {ChangeEvent, useCallback, useEffect, useRef} from 'react';
 import {useAppSelector} from 'shared/hooks/useAppSelector';
 import {Question} from 'entities/Question';
 import {asyncActionCreateHomework} from '../model/actions';

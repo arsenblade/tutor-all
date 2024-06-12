@@ -113,3 +113,24 @@
     height: 20px;
   }
 }
+
+.answerRadio {
+  flex: 1;
+
+  @media (max-width: $tabletWidth) {
+    font-size: 16px;
+  }
+
+  & > span {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.fieldHomeworkNameDisabled {
+  opacity: 0.6;
+}
+
+.answerText {
+  display: flex;
+}

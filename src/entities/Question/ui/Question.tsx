@@ -1,19 +1,24 @@
-import {ChangeEvent, memo, useCallback, useState} from 'react';
+import {ChangeEvent, memo, useCallback, useEffect, useState} from 'react';
 import CustomInput from 'shared/ui/CustomInput/CustomInput';
 import {IQuestion} from '../types/Question.types';
 import {ActionCreatorWithPayload} from '@reduxjs/toolkit';
 import Button from 'shared/ui/Button/Button';
 import AnswerItem from './components/AnswerItem';
 import styles from './Question.module.scss';
+import SwitchTab from 'shared/ui/SwitchTab/SwitchTab';
 
 const tabs = [
     {
+        name: 'Один ответ',
+        value: 'radio',
+    },
+    {
         name: 'Несколько ответов',
-        value: 'maneAnswer',
+        value: 'checkbox',
     },
     {
         name: 'Текстовый ответ',
-        value: 'textAnswer',
+        value: 'text',
     },
 ];
 
@@ -27,10 +32,14 @@ interface QuestionsPropsInterface {
 }
 
 function Question({question, onChange, index, onClickAddAnswer, onClickRemoveAnswer, onClickRemoveQuestion}: QuestionsPropsInterface) {
-    const [activeTab, setActiveTab] = useState(tabs[0].value);
+    const [activeTab, setActiveTab] = useState<string>(question.type);
 
     const handleChangeTab = (tab: string) => {
         setActiveTab(tab);
+        onChange({
+            ...question,
+            type: (tab as 'radio' | 'checkbox' | 'text'),
+        });
     };
 
     const handleChangeTextQuestion = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -58,21 +67,42 @@ function Question({question, onChange, index, onClickAddAnswer, onClickRemoveAns
     }, [question]);
 
     const handleChangeIsCorrectAnswer = useCallback((isCorrect: boolean, idAnswer: string) => {
-        onChange({
-            ...question,
-            answers: question.answers.map((answer) => {
-                if (answer.id === idAnswer) {
+        if (activeTab === 'radio') {
+            onChange({
+                ...question,
+                answers: question.answers.map((answer) => {
+                    if (answer.id === idAnswer) {
+                        return {
+                            id: answer.id,
+                            text: answer.text,
+                            isCorrect,
+                        };
+                    }
+
                     return {
                         id: answer.id,
                         text: answer.text,
-                        isCorrect,
+                        isCorrect: false,
                     };
-                }
+                }),
+            });
+        } else {
+            onChange({
+                ...question,
+                answers: question.answers.map((answer) => {
+                    if (answer.id === idAnswer) {
+                        return {
+                            id: answer.id,
+                            text: answer.text,
+                            isCorrect,
+                        };
+                    }
 
-                return answer;
-            }),
-        });
-    }, [question]);
+                    return answer;
+                }),
+            });
+        }
+    }, [question, activeTab]);
 
     const handleClickAddAnswer = () => {
         onClickAddAnswer(question.id);
@@ -85,6 +115,19 @@ function Question({question, onChange, index, onClickAddAnswer, onClickRemoveAns
     const handleClickRemoveQuestion = () => {
         onClickRemoveQuestion(question.id);
     };
+
+    useEffect(() => {
+        onChange({
+            ...question,
+            answers: question.answers.map((answer) => {
+                return {
+                    id: answer.id,
+                    text: answer.text,
+                    isCorrect: false,
+                };
+            }),
+        });
+    }, [activeTab]);
 
     return (
       <div className={styles.question}>
@@ -123,11 +166,17 @@ function Question({question, onChange, index, onClickAddAnswer, onClickRemoveAns
           Ответы к вопросу
         </h3>
         <div className={styles.answers}>
-
+          <SwitchTab
+            tabs={tabs}
+            onChange={handleChangeTab}
+            activeTab={activeTab}
+          />
           <div className={styles.answersList}>
             {question.answers.map((answer, index) => (
               <AnswerItem
                 key={answer.id}
+                activeTab={activeTab}
+                idQuestion={question.id}
                 answer={answer}
                 indexAnswer={index}
                 onChange={handleChangeTextAnswer}
