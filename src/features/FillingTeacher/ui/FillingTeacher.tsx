@@ -11,6 +11,7 @@ import {useAppSelector} from 'shared/hooks/useAppSelector';
 import {useActionCreatorsTyped} from 'shared/hooks/useActionsCreators';
 import {asyncActionFillingTeacher} from '../model/actions';
 import {useAuth} from 'shared/hooks/useAuth';
+import {IFillingTeacherTypes} from "../types/FillingTeacher.types";
 
 export default function FillingTeacher() {
     const {isLoadingFillingTeacher, teacher, isEmptyInfo} = useAppSelector((state) => state.fillingTeacherSlice);
@@ -27,7 +28,15 @@ export default function FillingTeacher() {
 
     useEffect(() => {
         if (auth.user) {
-            actionsCreatorsFillingTeacher.getTeacherInfo({idUser: auth.user.id});
+            actionsCreatorsFillingTeacher.getTeacherInfo({idUser: auth.user.id}).then((response) => {
+                const currentTeacher = response.payload as IFillingTeacherTypes
+                setPriceValue(currentTeacher.price)
+                setPhotoValue(currentTeacher.photo)
+                setExperienceValue(currentTeacher.experience)
+                setEducationValue(currentTeacher.education)
+                setNameValue(currentTeacher.name)
+                setDescriptionValue(currentTeacher.description)
+            });
         }
     }, []);
 

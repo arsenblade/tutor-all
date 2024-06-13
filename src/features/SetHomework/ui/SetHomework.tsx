@@ -58,11 +58,13 @@ export default function SetHomework() {
                 asyncActionCreatorsStudents.getStudents({idTeacher: auth.user.id}),
                 asyncActionCreatorsHomeworks.getHomeworks({idTeacher: auth.user.id}),
             ]).then((responses) => {
-                const firstStudent = students[0];
+                const currentStudents = responses[0].payload as IStudent[]
+                const currentHomeworks = responses[1].payload as IHomework[]
+                const firstStudent = currentStudents[0];
 
                 if (firstStudent) {
                     setSelectedStudent(firstStudent);
-                    setVisibleHomeworks(homeworks.map((homework) => {
+                    setVisibleHomeworks(currentHomeworks.map((homework) => {
                         if (firstStudent.setHomeworks?.some((setHomework) => setHomework.id === homework.id)) {
                             return {
                                 ...homework,
