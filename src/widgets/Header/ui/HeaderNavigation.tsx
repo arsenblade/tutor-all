@@ -12,11 +12,6 @@ export default function HeaderNavigation() {
       <ul className={styles.headerNavigation}>
         {auth.user ? (
           <li>
-            <ChatIcon className={styles.icon} />
-          </li>
-          ) : null}
-        {auth.user ? (
-          <li>
             <HeaderNotification />
           </li>
           ) : null}
