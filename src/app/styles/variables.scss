@@ -4,13 +4,13 @@ $red: rgb(246 108 65);
 $banRed: rgb(241 20 20);
 $pink: rgb(255 68 180);
 $blue: rgb(91 181 255);
-$green: #D1F657;
+$green: #d1f657;
 $greenActive: #cef64a;
 $beige: #f5f5f5;
 $violet: #7c4eff;
 $purple: #a77dff;
 $violetActive: #7341fd;
-$violetLight: rgba(139, 77, 255, 0.8);
+$violetLight: rgb(139 77 255 / 80%);
 $blue: #1455ff;
 $darkGreyUnderline: #262626;
 $mobileOnlyWidth: 600px;
@@ -22,7 +22,7 @@ $black80: #1f1f1f;
 $black60: #262626;
 $black20: #383838;
 
-$gray: #ABABAB;
+$gray: #ababab;
 
 $firstHeader: 44px;
 $secondHeader: 34px;

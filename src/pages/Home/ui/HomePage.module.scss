@@ -45,7 +45,7 @@
   font-size: 44px;
   line-height: 114%;
   margin: 0 auto;
-  color: #000000;
+  color: #000;
 
   @media (max-width: 800px) {
     width: auto;
@@ -63,7 +63,7 @@
 
 .loader {
   font-size: 32px;
-  border: 0.3em solid #000000;
+  border: 0.3em solid #000;
   border-bottom-color: transparent;
   margin-top: 32px;
 }

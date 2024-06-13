@@ -1,9 +1,9 @@
-@import 'app/styles/variables';
+@import "app/styles/variables";
 
 .navigation {
   display: flex;
   backdrop-filter: blur(15px);
-  background: rgba(77, 77, 77, 0.3);
+  background: rgb(77 77 77 / 30%);
   border-radius: 3rem;
   align-items: center;
   bottom: 2rem;
@@ -22,7 +22,7 @@
 
 .iconNav {
   display: block;
-  fill: #FFFFFF;
+  fill: #fff;
   transition: 0.2s;
 }
 
@@ -36,7 +36,7 @@
 .linkHomework {
   & > svg {
     fill: transparent;
-    stroke: #FFFFFF;
+    stroke: #fff;
   }
 }
 

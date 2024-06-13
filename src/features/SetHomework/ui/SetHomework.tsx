@@ -58,8 +58,8 @@ export default function SetHomework() {
                 asyncActionCreatorsStudents.getStudents({idTeacher: auth.user.id}),
                 asyncActionCreatorsHomeworks.getHomeworks({idTeacher: auth.user.id}),
             ]).then((responses) => {
-                const currentStudents = responses[0].payload as IStudent[]
-                const currentHomeworks = responses[1].payload as IHomework[]
+                const currentStudents = responses[0].payload as IStudent[];
+                const currentHomeworks = responses[1].payload as IHomework[];
                 const firstStudent = currentStudents[0];
 
                 if (firstStudent) {

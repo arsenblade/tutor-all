@@ -1,7 +1,7 @@
-@import 'app/styles/variables';
+@import "app/styles/variables";
 
 .header {
-  border-bottom: 1px solid #BBBBBB;
+  border-bottom: 1px solid #bbb;
 }
 
 .logo {
@@ -40,7 +40,7 @@
 
 .icon {
   transition: 0.2s;
-  fill: #FFFFFF;
+  fill: #fff;
   cursor: pointer;
 
   &:hover {
@@ -58,7 +58,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  color: #FFFFFF;
+  color: #fff;
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -74,9 +74,11 @@
   0% {
     opacity: 0.2;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.2;
   }

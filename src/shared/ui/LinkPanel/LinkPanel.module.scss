@@ -1,4 +1,4 @@
-@import 'app/styles/variables';
+@import "app/styles/variables";
 
 .linkPanel {
   display: grid;
@@ -49,12 +49,12 @@
   color: $green;
   font-size: 14px;
   line-height: 18px;
-  margin: 0
+  margin: 0;
 }
 
 .iconPanel {
   justify-self: flex-end;
-  fill: #FFFFFF;
+  fill: #fff;
   transition: 0.2s;
 }
 

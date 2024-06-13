@@ -76,7 +76,7 @@
 
 .studentItem {
   background: transparent;
-  color: #FFFFFF;
+  color: #fff;
   padding: 16px;
   border-radius: 10px;
   border: 1px solid $purple;
@@ -85,7 +85,7 @@
   cursor: pointer;
 
   &:hover {
-    background: rgba(167, 125, 255, 50%);
+    background: rgb(167 125 255 / 50%);
   }
 }
 

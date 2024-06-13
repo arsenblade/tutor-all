@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   animation: slideDown 0.5s ease-out;
-  color: #FFFFFF;
+  color: #fff;
   background: $black60;
   height: 60px;
   overflow: hidden;
@@ -41,7 +41,7 @@
   border: none;
 
   & > svg {
-    fill: #ffffff;
+    fill: #fff;
     cursor: pointer;
 
     &:hover {
@@ -64,7 +64,7 @@
 }
 
 .installButton {
-  color: #FFFFFF;
+  color: #fff;
   background: $purple;
   border: none;
   padding: 1px 12px;
@@ -83,6 +83,7 @@
   from {
     height: 0;
   }
+
   to {
     height: 60px;
   }
