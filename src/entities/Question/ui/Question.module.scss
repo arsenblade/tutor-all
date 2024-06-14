@@ -70,6 +70,12 @@
   padding-right: 60px;
 }
 
+.switchTab {
+  @media (max-width: $mobileOnlyWidth) {
+    overflow-x: scroll;
+  }
+}
+
 .answerRemove {
   position: absolute;
   right: 8px;
